@@ -1,0 +1,59 @@
+:root{
+    --primary:#0D0D0D;
+    --secondary:#1E1E1E;
+    --Tertiary:#333333;
+    --Quaternary:#A0A0A0;
+    --five:#fff;
+    --six:#E0A96D;
+    --SEVEN:#D4A373;
+    --EGHIT:#F4A261;
+    --NINE: #E2C097;
+    --TEN:#38BDF8;
+    --ONE:rgb(136,112,142);
+    --two:rgb(186,170,200);
+    --three:rgb(215,197,216);
+    --four:rgb(218,212,223);
+
+    --five-1:#b4b8bd;
+    --SIX-ONE:#;
+    --SEVEN-ONE:#FFF8EE;
+
+    --ONE-TWO:#9D6646;
+    --TWO-TWO:#FFD49D;
+    --THREE-TWO:#FCF8F5;
+
+    --TWO-THREE:#A41824;
+    --THREE-ONE:#C6C2C3;
+
+    --FOUR:#11223E;
+    --FOUR-ONE:#C0A786;
+
+    --FOUR-TWO:#15463D;
+    --FOUR-THREE:#CDB8BA;
+
+    --FOUR-FOUR:#3c0e11;
+    --four-five:#cdb59b;
+    --four-six:#d6c3b2;
+
+    --four-seven:#556B2F;
+    --FOUR-EIGHT:#EAEAEA;
+
+    --FOUR-NINE:#6F4E37;
+    --FOUR-TEN:#F5E6D3;
+
+    --FIVE-ONE:#6F806C;
+    --FIVE-TWO:#D7B38B;
+
+    --FIVE-THREE:#6D6457;
+    --FIVE-FOUR:#EEEAE3;
+
+    --FIVE-FIVE:#B97D7B;
+    --FIVE-SIX:#DDD3C9;
+
+    --FIVE-SEVEN:#EDF1F5;
+    --FIVE-EIGHT:#0145F2;
+
+    --text-hover:#CFD5BD;
+
+    --transition:.10s;
+}

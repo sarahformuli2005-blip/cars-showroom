@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box!important;
+}
+
+body {
+  background: var(--primary)!important;
+  color: var(--five)!important;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#mainnav{
+  background: var(  --primary);
+  border-bottom: 1px solid var(  --TEN);
+}
+#mainnav #logo-img {
+  width: 80px;
+  height: auto;
+  padding: 0px!important;
+  margin: 0px!important;
+}
+#mainnav #Logo .navbar-brand{
+  color: var(--TEN);
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  
+}
+#mainnav #Logo .navbar-brand span{
+  margin-left: 5px;
+  color: var( --five);
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 1.5rem;
+}
+#nav{
+  justify-content: center!important;
+  text-decoration: none!important;
+  font-family:sans-serif!important;
+}
+#nav-ul .nav-item a{
+  color: var(--five)!important;
+  font-family:'Times New Roman', Times, serif!important;
+  font-weight: 600;
+  word-spacing: 1px;
+  letter-spacing: 0.6px;
+
+}
+#nav-ul .nav-item a:hover{
+  color: var(--TEN)!important;
+  transition:2s;
+  transform: translateY(-4px);
+
+
+}
+#mainnav #nav #nav-ul .nav-item  .active{
+color: var(--TEN) !important;
+  padding-bottom: 4px;
+  position: relative;
+
+
+}
+.btn-close {
+  font-size: 20px;
+}
+#navoffcanvas #navoffcanvas-header {
+  background: var(--five);
+  color: var(--TEN);
+}
+.offcanvas-body li {
+  font-weight: 700;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  border-bottom: 2px solid var(--primary) !important;
+}
+#section-one{
+  background: url(../img/1.png);
+  background-size: cover;
+  width: 100%;
+  height: 540px;
+  position: relative;
+  background-position: center;
+}
+#left-section-one{
+  margin-top:12%;
+  
+}
+.sub-menu {
+  display: none;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 100%;
+  z-index: 100;
+  text-align: center;
+  margin-left: 15px;
+}
+
+#nav-ul .nav-item:focus-within .sub-menu {
+  display: block;
+}

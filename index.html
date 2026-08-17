@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>project</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/varibles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!--Botstrap icon-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <!--Google font-->
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    <!---fon Awesome-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+     <!-- Start Navbar-->
+    <nav class="navbar navbar-expand-lg sticky-top " id="mainnav">
+        <div class="container" id="Logo"> <img id="logo-img" src="./img/STK-20260816-WA0063.webp" width="40px"
+                height="50px">
+            <a href="#" class="navbar-brand">AUTO<span>SURE</span></a> 
+            <!---Mobile Toggle-->
+             <button
+                class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navoffcanvas"
+                aria-controls="navoffcanvas" id="mobile-toggle"> <i class="bi bi-list icon"></i>
+            </button>
+            <!---Disktop nav-->
+            <div class="collapse navbar-collapse justify-content-end" id="nav">
+                <ul class="nav align-items-center ms-5 " id="nav-ul">
+                    <li class="nav-item"> <a href="#" class="nav-link active nav-a">HOME</a> </li>
+                    <li class="nav-item"> <a href="#" class="nav-link nav-a"> OUR CARS</a>
+                    </li>
+                    <li class="nav-item "> <a href="#" class="nav-link nav-a">CARS OF SALE</a> </li>
+                    <li class="nav-item "> <a href="#" class="nav-link nav-a">ABOUT US</a> </li>
+                    <li class="nav-item"> <a href="#" class="nav-link nav-a ">CONTACT US</a> </li>
+                    
+                    <li class="nav-item ms-4"> <a class="nav-link" href="#"><i class="bi bi-search"></i></a></li>
+                    <li class="nav-item"> <a class="nav-link" href="#"><i class="bi bi-person"></i></a></li>
+                    <li class="nav-item"> <a class="nav-link" href="#"><i class="bi bi-cart3"></i></a></li>
+                    <li class="nav-item"> <a class="nav-link" href="#"><i class="bi bi-heart"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav> <!--mobil menu-->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="navoffcanvas">
+        <div class="offcanvas-header" id="navoffcanvas-header">
+            <h4>Menu</h4> <button class="btn-close btn-close-white" type="button" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav">
+                <li class="nav-item "> <a href="./index.html" class="nav-link .active">HOME</a> </li>
+                <li class="nav-item "> <a href="./About Us.html" class="nav-link "> OUR CARS</a> </li>
+                <li class="nav-item " id="nav-li"> <a href="./Department.html" class="nav-link ">CARS OF SALE</a> </li>
+                <li class="nav-item"> <a href="./countacus.html" class="nav-link ">ABOUT US</a> </li>
+                <li class="nav-item"> <a href="./countacus.html" class="nav-link ">Contact Us</a> </li>
+                <li class="nav-item"> <a href="./Login.html" class="nav-link ">LOGIN & REGISTER</a> </li>
+            </ul>
+        </div>
+    </div>
+
+    <!--section one-->
+    <section id="section-one">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-12 d-flex flex-row">
+            <div class="col-lg-6 col-md-4 col-12" id="div-left-section-one">
+                <div class="section-one-text pt-5 mt-5">
+                    <h1>this is my header</h1>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus cumque atque nihil exercitationem ipsa vero labore cupiditate, enim esse nu?</p>
+                    <button id="btn-section-one">Explore cars</button>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-4 col-12 " id="left-section-one">
+                    <img src="./img/STK-20260816-WA0065.webp" alt="Mercedes-benz avtr">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</html>
