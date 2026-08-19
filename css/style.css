@@ -89,7 +89,6 @@ color: var(--TEN) !important;
 }
  #section-one #div-left-section-one .section-one-text{
   width:40%;
-
   position: absolute;
   height:auto;
   padding: 3%;
@@ -98,7 +97,6 @@ color: var(--TEN) !important;
   box-shadow: 5px 5px 12px #00000035;
   background:rgba(0, 0, 0, 0.55);
   border-radius: 15px;
-  overflow: hidden;
   backdrop-filter: blur(3px);
   z-index: 100;
  }
@@ -159,7 +157,7 @@ color: var(--TEN) !important;
   transform: translateY(-2px);
   transition: all 2s;
  }
- 
+
  /*
 #section-one #left-section-one {
   position: relative;
