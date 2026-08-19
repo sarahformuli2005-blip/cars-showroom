@@ -111,8 +111,9 @@ color: var(--TEN) !important;
  }
  #div-left-section-one .section-one-text h1 span{
   color: var(--TEN);
-  font-family:"Manrope",sans-serif;
+  font-family:"Sora",sans-serif;
   margin-bottom: 2%;
+
  }
  #div-left-section-one .section-one-text p{
   font-family: "Manrope",sans-serif;
