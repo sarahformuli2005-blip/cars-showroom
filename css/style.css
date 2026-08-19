@@ -88,17 +88,19 @@ color: var(--TEN) !important;
   background-position: center;
 }
  #section-one #div-left-section-one .section-one-text{
-  width:40%;
+  width:38%;
   position: absolute;
   height:auto;
-  padding: 3%;
+  padding: 3%!important;
   margin-top: 7%!important;
   border: 1px solid #ffffff75;
   box-shadow: 5px 5px 12px #00000035;
   background:rgba(0, 0, 0, 0.55);
   border-radius: 15px;
+  overflow: hidden;
   backdrop-filter: blur(3px);
   z-index: 100;
+  text-align: left;
  }
 
  #div-left-section-one .section-one-text h1{
@@ -107,9 +109,9 @@ color: var(--TEN) !important;
   z-index: 100;
   font-weight: 500;
  }
- #div-left-section-one .section-one-text  span{
+ #div-left-section-one .section-one-text h1 span{
   color: var(--TEN);
-  font-family:"Sora",sans-serif;
+  font-family:"Manrope",sans-serif;
   margin-bottom: 2%;
  }
  #div-left-section-one .section-one-text p{
@@ -152,12 +154,11 @@ color: var(--TEN) !important;
   font-family: "Sora",sans-serif;
  }
  #div-left-section-one .section-one-text #btn2-section-one:hover{
-   background: var(--TEN);
+  background: var(--TEN);
   color: var(--five);
   transform: translateY(-2px);
-  transition: all 2s;
+  transition: all 2s; 
  }
-
  /*
 #section-one #left-section-one {
   position: relative;
