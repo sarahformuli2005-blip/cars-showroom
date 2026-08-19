@@ -22,10 +22,9 @@ body {
   
 }
 #mainnav #logo-img {
-  width: 80px;
-  height: auto;
+  height: 30px;
   padding: 0px!important;
-  margin: 0px!important;
+  margin-top: 3px!important;
 }
 #mainnav #Logo .navbar-brand{
   color: var(--TEN);
@@ -89,7 +88,8 @@ color: var(--TEN) !important;
   background-position: center;
 }
  #section-one #div-left-section-one .section-one-text{
-  width:38%;
+  width:40%;
+
   position: absolute;
   height:auto;
   padding: 3%;
@@ -109,7 +109,7 @@ color: var(--TEN) !important;
   z-index: 100;
   font-weight: 500;
  }
- #div-left-section-one .section-one-text h1 span{
+ #div-left-section-one .section-one-text  span{
   color: var(--TEN);
   font-family:"Sora",sans-serif;
   margin-bottom: 2%;
@@ -138,7 +138,12 @@ color: var(--TEN) !important;
  #div-left-section-one .section-one-text #btn-section-one i{
   margin-right:4px ;
  }
-
+#div-left-section-one .section-one-text #btn-section-one:hover{
+  background: var(--five);
+  color: var(--TEN);
+  transform: translateY(-2px);
+  transition: all 2s;
+}
  #div-left-section-one .section-one-text #btn2-section-one{
    padding: 2%;
   border: 1px solid var(--five);
@@ -148,6 +153,13 @@ color: var(--TEN) !important;
   margin-left: 5%;
   font-family: "Sora",sans-serif;
  }
+ #div-left-section-one .section-one-text #btn2-section-one:hover{
+   background: var(--TEN);
+  color: var(--five);
+  transform: translateY(-2px);
+  transition: all 2s;
+ }
+ 
  /*
 #section-one #left-section-one {
   position: relative;
