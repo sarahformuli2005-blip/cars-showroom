@@ -89,6 +89,7 @@ color: var(--TEN) !important;
 }
  #section-one #div-left-section-one .section-one-text{
   width:40%;
+  height: auto;
   position: absolute;
   height:auto;
   padding: 3%!important;
@@ -117,7 +118,7 @@ color: var(--TEN) !important;
  }
  #div-left-section-one .section-one-text p{
   font-family: "Manrope",sans-serif;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
   text-align: justify;
