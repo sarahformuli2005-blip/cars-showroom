@@ -1,13 +1,13 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box!important;
+  box-sizing: border-box !important;
 }
 
 body {
-  background: var(--primary)!important;
-  color: var(--five)!important;
- font-family:"Sora",sans-serif;
+  background: var(--primary) !important;
+  color: var(--five) !important;
+  font-family: "Sora", sans-serif;
   overflow-x: hidden;
 }
 #mobile-toggle i {
@@ -17,54 +17,47 @@ body {
 #mobile-toggle i:hover {
   color: var(--five);
 }
-#mainnav{
-  background: var(  --primary);
-  
+#mainnav {
+  background: var(--primary);
 }
 #mainnav #logo-img {
   height: 30px;
-  padding: 0px!important;
-  margin-top: 3px!important;
+  padding: 0px !important;
+  margin-top: 3px !important;
 }
-#mainnav #Logo .navbar-brand{
-  color: var(--TEN);
- font-family:"Sora",sans-serif;
+#mainnav #Logo .navbar-brand {
+  color: var(--five);
+  font-family: "Caveat", sans-serif;
   font-size: 1.5rem;
-  font-weight: 600;
-  
+  font-weight: 900 !important;
 }
-#mainnav #Logo .navbar-brand span{
+#mainnav #Logo .navbar-brand span {
   margin-left: 5px;
-  color: var( --five);
- font-family:"Sora",sans-serif;
+  color: var(--TEN);
+  font-family: "Caveat", sans-serif;
   font-size: 1.5rem;
 }
-#nav{
-  justify-content: center!important;
-  text-decoration: none!important;
-  font-family:sans-serif!important;
+#nav {
+  justify-content: center !important;
+  text-decoration: none !important;
+  font-family: "sora" sans-serif !important;
 }
-#nav-ul .nav-item a{
-  color: var(--five)!important;
-  font-family:"Manrope",sans-serif;
+#nav-ul .nav-item a {
+  color: var(--five) !important;
+  font-family: "sora", sans-serif;
   font-weight: 600;
   word-spacing: 1px;
   letter-spacing: 0.6px;
-
 }
-#nav-ul .nav-item a:hover{
-  color: var(--TEN)!important;
-  transition:2s;
+#nav-ul .nav-item a:hover {
+  color: var(--TEN) !important;
+  transition: 2s;
   transform: translateY(-4px);
-
-
 }
-#mainnav #nav #nav-ul .nav-item  .active{
-color: var(--TEN) !important;
+#mainnav #nav #nav-ul .nav-item .active {
+  color: var(--TEN) !important;
   padding-bottom: 4px;
   position: relative;
-
-
 }
 #navoffcanvas-header .btn-close {
   font-size: 20px;
@@ -75,11 +68,10 @@ color: var(--TEN) !important;
 }
 .offcanvas-body li {
   font-weight: 700;
-  font-family:"Sora",sans-serif;
+  font-family: "Sora", sans-serif;
   border-bottom: 2px solid var(--primary) !important;
-  
 }
-#section-one{
+#section-one {
   background: url(../img/1786973351883.png);
   background-size: cover;
   width: 100%;
@@ -87,114 +79,213 @@ color: var(--TEN) !important;
   position: relative;
   background-position: center;
 }
- #section-one #div-left-section-one .section-one-text{
-  width:40%;
+#section-one #div-left-section-one .section-one-text {
+  width: 40%;
   height: auto;
   position: absolute;
-  height:auto;
-  padding: 3%!important;
-  margin-top: 7%!important;
+  height: auto;
+  padding: 3% !important;
+  margin-top: 9% !important;
   border: 1px solid #ffffff75;
   box-shadow: 5px 5px 12px #00000035;
-  background:rgba(0, 0, 0, 0.55);
+  background: rgba(0, 0, 0, 0.55);
   border-radius: 15px;
   overflow: hidden;
   backdrop-filter: blur(3px);
   z-index: 100;
   text-align: left;
- }
+}
 
- #div-left-section-one .section-one-text h1{
-  color:var(--five);
-  font-family:"Sora",sans-serif;
+#div-left-section-one .section-one-text h1 {
+  color: var(--five);
+  font-family: "Caveat", sans-serif;
   z-index: 100;
-  font-weight: 500;
- }
- #div-left-section-one .section-one-text h1 span{
+  font-weight: 600;
+}
+#div-left-section-one .section-one-text h1 span {
   color: var(--TEN);
-  font-family:"Sora",sans-serif;
+  font-family: "Caveat", sans-serif;
   margin-bottom: 2%;
-
- }
- #div-left-section-one .section-one-text p{
-  font-family: "Manrope",sans-serif;
+  margin-right: 6px;
+}
+#div-left-section-one .section-one-text p {
+  font-family: "sora", sans-serif;
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
   text-align: justify;
-  color: var(--five);
+  color: var(--NINE);
   z-index: 100;
   margin-top: 1%;
- }
- #div-left-section-one .section-one-text #btn-section-one{
+}
+#div-left-section-one .section-one-text #btn-section-one {
   padding: 2%;
   border: 1px solid var(--TEN);
   color: var(--five);
   z-index: 100;
   opacity: 1;
   background: var(--TEN);
-  font-family:"Sora",sans-serif;
+  font-family: "Sora", sans-serif;
   font-weight: 500;
-
- }
- #div-left-section-one .section-one-text #btn-section-one i{
-  margin-right:4px ;
- }
-#div-left-section-one .section-one-text #btn-section-one:hover{
+}
+#div-left-section-one .section-one-text #btn-section-one i {
+  margin-right: 4px;
+}
+#div-left-section-one .section-one-text #btn-section-one:hover {
   background: var(--five);
   color: var(--TEN);
   transform: translateY(-2px);
   transition: all 2s;
 }
- #div-left-section-one .section-one-text #btn2-section-one{
-   padding: 2%;
+#div-left-section-one .section-one-text #btn2-section-one {
+  padding: 2%;
   border: 1px solid var(--five);
   color: var(--five);
   z-index: 100;
   opacity: 100;
   margin-left: 5%;
-  font-family: "Sora",sans-serif;
- }
- #div-left-section-one .section-one-text #btn2-section-one:hover{
+  font-family: "Sora", sans-serif;
+}
+#div-left-section-one .section-one-text #btn2-section-one:hover {
   background: var(--TEN);
   color: var(--five);
   transform: translateY(-2px);
-  transition: all 2s; 
- }
- /*
-#section-one #left-section-one {
+  transition: all 2s;
+  border: none;
+}
+#div-left-section-one .section-one-text #btn2-section-one i {
+  margin-right: 3px;
+}
+
+#section-two {
+  margin-top: 1% !important;
+  background: var(--primary);
+  text-align: center !important;
+}
+#header-section {
+  font-family: "Caveat", sans-serif;
+  font-weight: 700;
+  color: var(--five);
+}
+#p-section {
+  font-family: "sora", sans-serif;
+  color: var(--NINE);
+  font-weight: 600;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+}
+.carsslider {
   position: relative;
   width: 100%;
-  justify-content: right;
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
 }
-#section-one #left-section-one img{
-position: absolute;
-margin-top: 20%;
-animation: carmove 2s ease-in-out  0s 2  alternate;
 
+.cars-card {
+  width: 100%;
+  overflow: hidden;
 }
-@keyframes carmove{
-  0%{
-   transform: translateX(0);
-  }
-  100%{
-    transform: translateX(-100px);
-  }
-}
-*/
 
-.sub-menu {
-  display: none;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  position: absolute;
-  top: 100%;
+.cars-slid-section-two {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.car-slide {
+  flex: 0 0 25%;
+  padding: 0 8px;
+  box-sizing: border-box;
+}
+
+.card-section-two {
+  width: 100%;
+  height: auto;
+  position: relative;
+  padding: 9px;
+  border: 1px solid #ffffff75;
+  box-shadow: 5px 5px 12px #00000035;
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 15px;
+  backdrop-filter: blur(3px);
   z-index: 100;
-  text-align: center;
-  margin-left: 15px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
 }
 
-#nav-ul .nav-item:focus-within .sub-menu {
+.img-section-two {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
   display: block;
+  aspect-ratio: 7/4;
+}
+
+.card-content {
+  padding: 15px 5px;
+}
+
+.card-content h5 {
+  color: var(--five);
+  font-family: "Sora", sans-serif;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.card-content h4 {
+  color: var(--TEN);
+  font-family: "Sora", sans-serif;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.card-content p {
+  color: var(--NINE);
+  font-size: 0.85rem;
+  margin-bottom: 15px;
+}
+
+.btn-section-two {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--TEN);
+  border-radius: 8px;
+  background: var(--TEN);
+  color: var(--five);
+  font-family: "Sora", sans-serif;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-section-two:hover {
+  background: transparent;
+  color: var(--TEN);
+}
+
+.button {
+  display: flex;
+  flex-direction: row;
+  text-align: right;
+}
+.slider-btn {
+  background: var(--five);
+  color: var(--TEN);
+  padding: 8px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5%;
+  border: 1px solid var(--TEN);
+}
+.slider-btn:focus {
+  background: var(--TEN);
+  color: var(--five);
+  transition: 3s;
 }
