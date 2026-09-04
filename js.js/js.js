@@ -3,7 +3,7 @@ const nextBtn = document.getElementById("nextBtn");
 const prevBtn = document.getElementById("prevBtn");
 let index = 0;
 const totalCards = document.querySelectorAll(".car-slide").length;
-const showCards = 4;
+const showCards =4;
 const maxIndex = totalCards - showCards;
 nextBtn.addEventListener("click", function () {
     if (index < maxIndex) {
@@ -18,4 +18,5 @@ prevBtn.addEventListener("click", function () {
         cardslid.style.transform =
         `translateX(-${index * 25}%)`;
     }
+    
 });
