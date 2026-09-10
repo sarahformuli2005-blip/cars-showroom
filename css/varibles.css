@@ -4,7 +4,7 @@
     --Tertiary:#333333;
     --Quaternary:#A0A0A0;
     --five:#fff;
-    --six:#E0A96D;
+    --six:#ffffff75;
     --SEVEN:#D4A373;
     --EGHIT:#F4A261;
     --NINE: #cccccc;
@@ -55,5 +55,5 @@
 
     --text-hover:#CFD5BD;
 
-    --transition:.10s;
+    --transition: 0.28s ease;
 }

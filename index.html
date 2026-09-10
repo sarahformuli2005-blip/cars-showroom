@@ -43,10 +43,12 @@
                     <li class="nav-item "> <a href="#" class="nav-link nav-a">ABOUT US</a> </li>
                     <li class="nav-item"> <a href="#" class="nav-link nav-a ">CONTACT US</a> </li>
 
-                    <li class="nav-item"> <a class="nav-link" href="#"><i class="bi bi-search"></i></a></li>
-                    <li class="nav-item"> <a class="nav-link" href="#"><i class="bi bi-cart3"></i></a></li>
-                    <li class="nav-item"> <a class="nav-link" href="#"><i class="bi bi-heart"></i></a></li>
-                    <li class="nav-item"> <a class="nav-link" href="#"><i class="bi bi-person"></i></a></li>
+                    <li class="nav-item"> <a href="#" class="nav-link nav-a ">Login & Register</a> </li>
+                    <li class="nav-item "><a class="nav-link nav-a nav-icons" href="wishlist.html"><i
+                                class="bi bi-heart" style="font-size: 18px;"></i><span class="icon-nav">0</span></a>
+                    </li>
+                    <li class="nav-item "><a class="nav-link nav-a nav-icons" href="cart.html"><i class="bi bi-cart3"
+                                style="font-size: 18px;"></i><span class="icon-nav">0</span></a></li>
                 </ul>
             </div>
         </div>
@@ -64,10 +66,12 @@
                 <li class="nav-item "> <a href="#" class="nav-link nav-a">CARS OF SALE</a> </li>
                 <li class="nav-item "> <a href="#" class="nav-link nav-a">ABOUT US</a> </li>
                 <li class="nav-item"> <a href="#" class="nav-link nav-a ">CONTACT US</a> </li>
-                <li class="nav-item ms-lg-4"><a class="nav-link" href="#"><i class="bi bi-search"></i></a></li>
-                <li class="nav-item"> <a class="nav-link" href="#"><i class="bi bi-person"></i></a></li>
-                <li class="nav-item"> <a class="nav-link" href="#"><i class="bi bi-cart3"></i></a></li>
-                <li class="nav-item"> <a class="nav-link" href="#"><i class="bi bi-heart"></i></a></li>
+
+                <li class="nav-item"> <a href="#" class="nav-link nav-a ">Login & Register</a> </li>
+                <li class="nav-item"><a href="wishlist.html" class="nav-link">WISHLIST (<span
+                            class="wish-count">0</span>)</a></li>
+                <li class="nav-item"><a href="cart.html" class="nav-link">CART (<span class="cart-count">0</span>)</a>
+                </li>
             </ul>
         </div>
     </div>
@@ -84,7 +88,7 @@
                             </p>
                             <div class="d-flex flex-row flex-wrap">
                                 <button class="btn me-2 mb-lg-0 mb-2" id="btn-section-one"><i
-                                        class="bi bi-car-front"></i>Explore cars</button>
+                                        class="bi bi-car-front"></i>Browse cars</button>
                                 <button class="btn me-2" id="btn2-section-one"><i class=" bi bi-speedometer2"></i>Test
                                     Driver </button>
                             </div>
@@ -93,54 +97,55 @@
                 </div>
             </div>
     </section>
-   <section id="category">
-    <div class="container">
-    <div class="row">
-      <h1 class="section-category-title">Browse by Category</h1>
-      <p id="p-section" class="text-center mt-1">Find your perfect car by category.</p>
+    <section id="category">
+        <div class="container">
+            <div class="row ">
+                <h1 class="section-category-title">Browse by Category</h1>
+                <p id="p-section" class="text-center mt-1">Find your perfect car by category.</p>
+                <div class="col-lg-2  d-flex flex-column gap-2 justify-content-center  card mx-4">
+                    <a href="#">
+                        <img src="./img/icons8-car-50.png" width="35px">
+                    </a>
+                    <h5>New Cars</h5>
+                </div>
+                <div class="col-lg-2  d-flex flex-column gap-2 justify-content-center card mx-4">
+                    <a href="#"><img src="./img/icons8-suv-50.png" width="35px"> </a>
+                    <h5>SUV</h5>
+                </div>
+                <div class="col-lg-2  d-flex flex-column gap-2 justify-content-center card mx-4">
+                    <a href="#"> <img src="./img/icons8-sedan-50.png" width="35px"></a>
+                    <h5>Sedan</h5>
+                </div>
 
-      <div class="col-lg-2  d-flex flex-column gap-2 justify-content-center  card mx-4">
-        <a href="#">
-          <i class="bi bi-car-front"></i>
-        </a>
-        <h5>New Cars</h5>
-      </div>
-      <div class="col-lg-2  d-flex flex-column gap-2 justify-content-center card mx-4">
-        <a href="#"><i class="bi bi-car-front"></i> </a>
-        <h5>SUV</h5>
-      </div>
-      <div class="col-lg-2  d-flex flex-column gap-2 justify-content-center card mx-4">
-        <a href="#"> <i class="bi bi-car-front"></i></a>
-        <h5>Sedan</h5>
-      </div>
-
-      <div class="col-lg-2  d-flex flex-column gap-2 justify-content-center card mx-4">
-        <a href="#"><i class="bi bi-gem"></i></a>
-        <h5>Luxury</h5>
-      </div>
-
-
-      <div class="col-lg-2  d-flex flex-column gap-2 justify-content-center card mx-4">
-        <a href="#"> <i class="bi bi-lightning-charge"></i></a>
-        <h5>Electric</h5>
-      </div>
+                <div class="col-lg-2  d-flex flex-column gap-2 justify-content-center card mx-4">
+                    <a href="#"><i class="bi bi-gem"></i></a>
+                    <h5>Luxury</h5>
+                </div>
 
 
-      <div class="col-lg-2 d-flex flex-column gap-2 justify-content-center card mx-4">
-        <a href="#"><i class="bi bi-truck"></i></a>
-        <h5>Van</h5>
-      </div>
-
-      <div class="col-lg-2 d-flex flex-column gap-2 justify-content-center card mx-4">
-        <a href="#"><i class="bi bi-speedometer2"></i></a>
-        <h5>Hatchback</h5>
-      </div>
+                <div class="col-lg-2  d-flex flex-column gap-2 justify-content-center card mx-4">
+                    <a href="#"> <i class="bi bi-lightning-charge"></i></a>
+                    <h5>Electric</h5>
+                </div>
 
 
-      
+                <div class="col-lg-2 d-flex flex-column gap-2 justify-content-center card mx-4">
+                    <a href="#"><i class="bi bi-truck"></i></a>
+                    <h5>Van</h5>
+                </div>
+
+                <div class="col-lg-2 d-flex flex-column gap-2 justify-content-center card mx-4">
+                    <a href="#"><i class="bi bi-speedometer2"></i></a>
+                    <h5>Hatchback</h5>
+                </div>
 
 
-   </section>
+
+            </div>
+        </div>
+
+
+    </section>
 
     <section id="section-two">
         <div class="container-fluid">
@@ -164,6 +169,7 @@
                                     <button class="icon">
                                         <i class="bi bi-heart"></i>
                                     </button>
+                                    
 
 
 
@@ -176,6 +182,7 @@
                                     <button class="btn-section-two">
                                         Add To Cart
                                     </button>
+                                    
                                 </div>
 
                             </div>
@@ -385,12 +392,78 @@
 
     </section>
 
+    <section id="section-five">
+        <div class="container">
+            <div class="row ">
+                <h1 class="section-category-title">Popular Brands</h1>
+                        <div class="col-lg-2  d-flex flex-column gap-2 justify-content-center card mx-4">
+                            <a href="#"> <img src="./img/icons8-toyota-100.png" width="40px"></a>
+                            <h5>Toyota</h5>
+                        </div>
+                        <div class="col-lg-2  d-flex flex-column gap-2 justify-content-center card mx-4">
+                            <img src="./img/icons8-lamborghini-48.png" width="40PX">
+                            <h5>Lamborghini</h5>
+                        </div>
+                        <div class="col-lg-2  d-flex flex-column gap-2 justify-content-center card mx-4">
+                            <a href="#"> <img src="./img/icons8-ferrari-48.png"></i></a>
+                            <h5>Ferrari</h5>
+                        </div>
+                        <div class="col-lg-2  d-flex flex-column gap-2 justify-content-center card mx-4">
+                            <a href="#"> <img src="./img/icons8-bentley-48.png"></i></a>
+                            <h5>Bentley</h5>
+                        </div>
+                        <div class="col-lg-2  d-flex flex-column gap-2 justify-content-center card mx-4">
+                            <a href="#"> <img src="./img/icons8-aston-martin-48.png"></i></a>
+                            <h5>Aston Martin </h5>
+                        </div>
+
+                        <div class="col-lg-2  d-flex flex-column gap-2 justify-content-center card mx-4">
+                            <a href="#"> <img src="./img/icons8-lexus-48.png"></i></a>
+                            <h5>Lexus </h5>
+                        </div>
+
+                        <div class="col-lg-2  d-flex flex-column gap-2 justify-content-center card mx-4">
+                            <a href="#"> <img src="./img/icons8-cadillac-48.png"></i></a>
+                            <h5>Cadillac </h5>
+                        </div>
+                   
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section id="section-four">
+        <div class="container">
+            <div class="row my-5 d-flex flex-wrap">
+                <div class="col-lg-12 col-md-12 col-12 d-flex flex-row flex-wrap mx-3">
+                    <div class="col-lg-5 col-6 col-md-6 div-left d-flex flex-wrap ">
+                        <img src="./img/1788553300273.png" alt="showcar img" 
+                           width="500px" height="300px"
+                             style="border-radius: 10px;" >
+                    </div>
+                    <div class="col-6 col-lg-6 div-right  d-flex flex-column flex-wrap mx-lg-4 mx-0 text-align-center justify-content-center" >
+                        <h3 class="mb-5">ABOUT US</h3>
+                        <h4 class="mb-2">Auto Sure:<span style="color: var(--TEN);">Trust</span> & True Authenticity</h4>
+                        <p id="p-section">At Auto Sure , we blend cutting-edge tecnology with the world`s finest brands to deliver an
+                            experience that is truly A choice beyond ordinary Our mission is simple:to elevate
+                            automotive standards and deliver security, authenticity,and complete peace of mind in every
+                            transaction .</p>
+                        <button class="btn-section-four" id="btn-section-four"  >Read More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
     <!--section three-->
     <section id="section-three">
         <div class="container">
-            <div class="row gap-5 my-lg-2 my-5">
+            <div class="row  my-lg-2 my-5">
                 <div class="statistics col-lg-12 d-flex flex-wrap flex-row justify-content-center">
-                    <div class="col-6 col-lg-2 col-md-4 d-flex  flex-row item-section-three mx-4">
+                    <div class="col-6 col-lg-2 col-md-4 d-flex  flex-row item-section-three me-lg-5 ">
                         <div class="col-4 icon-section">
                             <i class="bi bi-car-front-fill" style="font-size: 35px; margin-right: 5px;"></i>
                         </div>
@@ -401,7 +474,7 @@
                     </div>
 
 
-                    <div class="col-6 col-lg-2 col-md-4 d-flex  flex-row item-section-three mx-4">
+                    <div class="col-6 col-lg-2 col-md-4 d-flex  flex-row item-section-three mx-5">
                         <div class="col-4 icon-section">
                             <i class="bi bi-people" style="font-size: 35px; margin-right: 5px;"></i>
                         </div>
@@ -411,7 +484,7 @@
                         </div>
                     </div>
 
-                    <div class="col-6 col-lg-2 col-md-4 d-flex  flex-row item-section-three mx-4">
+                    <div class="col-6 col-lg-2 col-md-4 d-flex  flex-row item-section-three mx-5">
                         <div class="col-4 icon-section">
                             <i class="bi bi-trophy" style="font-size: 35px; margin-right: 5px;"></i>
                         </div>
@@ -431,44 +504,83 @@
                             <p>Years of Experience</p>
                         </div>
                     </div>
-
-
-                   
-                    
                 </div>
             </div>
         </div>
     </section>
-    
-
-    <section id="section-four">
-    <div class="container">
-    <div class="row my-5 d-flex flex-wrap">
-        <div class="col-lg-12 col-md-12 col-12 d-flex flex-row flex-wrap">
-      <div class="col-lg-6 col-6 div-left"> 
-        <img src="./img/1788553300273.png" alt="showcar img" width="500px" height="300px"
-          style="border-radius: 10px; margin-top: 7%; "> </div>
-      <div class="col-6 col-lg-6 div-right">
-        <h1 id="header-section" class="mt-5 mb-5">ABOUT US</h1>
-        <h4>Auto Sure:<span style="color: var(--TEN);" class="mx-2">Trust</span> & True Authenticity</h4>
-        <p>At Auto Sure , we blend cutting-edge tecnology with the world`s finest brands to deliver an experience that is truly A choice beyond ordinary Our mission is simple:to elevate automotive standards and deliver security, authenticity,and complete peace of mind in every transaction .</p>
-        <button class="btn-section-four" id="btn-section-four">Read More</button>
-      </div>
-      </div>
-    </div>
-  </div>
-
-    </section>
-
-    <section id="section-five">
+    <!--
+    <section id="section-six">
         <div class="container">
-            <div class="row ">
-                <div class="brands">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-12 d-flex flex-row flex-wrap"> 
+                    <div class="col-lg-6 col-md-6 col-12 div-left-section-six">
+                        <h2 id="header-section">Vans </h2>
+                        <p id="p-section">Explor Our Vans  <br>
+                        Find reliable ,spacious ,and comfortable vans for family ,business and travel needs.</p>
+                        <button class="btn-section-six">View All Vans</button>
+                    </div>
+                </div>
+            </div>
 
+        </div>
+    </section>-->
+    <div id="section-six-title">
+        <h2>Why Choose Us?</h2>
+    </div>
+    <section id="section-six">
+        <div class="container">
+            <div class="row">
+                <div class=" col-md-4 col-lg-2 text-center d-flex flex-wrap" id="section-why-choose-us">
+                    <div id="div-section-six">
+                        <div id="section-six-icon">
+                            <i class="bi bi-people"></i>
+                        </div>
+                        <h6>Multidisciplinary<br> Care</h6>
+                        <p>Expert teams working together for you</p>
+                    </div>
+                    <div id="div-section-six">
+                        <div id="section-six-icon">
+                            <i class="bi bi-cpu"></i>
+                        </div>
+                        <h6>Advanced <br>Technology</h6>
+                        <p>State-of-the-art equipment & facilities</p>
+                    </div>
+                    <div id="div-section-six">
+                        <div id="section-six-icon">
+                            <i class="bi bi-person-check"></i>
+                        </div>
+                        <h6>Personalized Treatment</h6>
+                        <p>Care tailored to your unique needs.</p>
+                    </div>
+                    <div id="div-section-six">
+                        <div id="section-six-icon">
+                            <i class="bi bi-globe2"></i>
+                        </div>
+                        <h6>International Standards</h6>
+                        <p>Global quality care standards.</p>
+                    </div>
+                    <div id="div-section-six">
+                        <div id="section-six-icon">
+                            <i class="bi bi-headset"></i>
+                        </div>
+                        <h6>24/7 Emergency Support</h6>
+                        <p>Alaways here when you need us.</p>
+                    </div>
+                    <div id="div-section-six">
+                        <div id="section-six-icon">
+                            <i class="bi bi-person-badge"></i>
+                        </div>
+                        <h6>Experienced Specialists</h6>
+                        <p>Highly qualitied and compassionate doctors.</p>
+                    </div>
                 </div>
             </div>
         </div>
+
     </section>
+
+
+
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque veritatis amet totam nemo vitae maxime!
         Dignissimos nihil beatae doloribus, accusamus nisi rerum, minima fugiat quasi fuga at amet! Dolor, cumque? Lorem
         ipsum dolor sit, amet consectetur adipisicing elit. Incidunt eius voluptatibus facere explicabo debitis quae
