@@ -600,7 +600,9 @@ width: 330px;
   border: 1px solid var(--line);
   border-radius: 16px;
   overflow: hidden;
-  width: 350px!important;
+ max-width:350px!important ; 
+ display: flex!important;
+ flex-direction: row!important;
 }
 
 .news-card img {
