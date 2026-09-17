@@ -202,7 +202,7 @@ margin-top: 5%;
   border-radius: 10px;
   justify-content: center;
   margin:2%;
-  border: 1px solid var(--six);
+  border: 1px solid var(--line);
   justify-content: center!important;
   align-items: center!important;
   text-align: center!important;
@@ -293,7 +293,7 @@ transform: translateY(-6px);
   height: auto;
   position: relative;
   padding: 9px;
-  border: 1px solid #ffffff75;
+  border: 1px solid var(--line);
   background: linear-gradient(180deg, #171717, #101010);
   border-radius: 15px;
   z-index: 100;
@@ -453,8 +453,8 @@ transform: translateY(-6px);
 #section-three{
  background: linear-gradient(180deg, #171717, #101010);
   margin-top: 3%;
-  border-top: 1px solid #ffffff75;
-  border-bottom:1px solid #ffffff75;
+  border-top: 1px solid var(--line);
+  border-bottom:1px solid var(--line);
   padding: 1%;
   text-align: center;
   justify-content: center!important;
@@ -542,7 +542,7 @@ transform: translateY(-6px);
 }
 .video-card {
   background: #141414!important;
-  border: 1px solid var(--six)!important;
+  border: 1px solid var(--line)!important;
   border-radius: 16px!important;
   transition: var(--transition);
   width: 100%;
@@ -582,7 +582,7 @@ width: 330px;
 }
 .testimonials-card{
   background: #141414;
-  border: 1px solid var(--six);
+  border: 1px solid var(--line);
   border-radius: 16px;
   padding: 24px;
   transition: var(--transition);
@@ -651,7 +651,7 @@ width: 330px;
 
 .why-card:hover {
   transform: translateY(-5px);
-  border-color: rgba(255, 85, 0, 0.5);
+  border-color: var(--TEN);
 }
 .why-card p {
   color: var(--NINE);
