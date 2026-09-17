@@ -182,13 +182,15 @@ body {
 
 
 /*section catagory*/
+#category{
+margin-top: 5%;
+}
 .container .row .section-category-title {
   color: var(--five);
   text-align: center;
   font-family: "Roboto", sans-serif;
   font-size: 2rem;
   font-weight: 800;
-  margin-top: 5%;
 }
 
 .container .row .card {
@@ -284,6 +286,7 @@ transform: translateY(-6px);
   box-sizing: border-box;
   margin:0.5%;
 }
+
 
 .card-section-two{
   width: 300px;
@@ -472,6 +475,10 @@ transform: translateY(-6px);
 }
 .statistics .text-section-three p{
   color: var(--NINE );
+}
+
+#section-five{
+  margin-top: 5%;
 }
 /*section three*/
 
