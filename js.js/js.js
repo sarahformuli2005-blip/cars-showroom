@@ -20,3 +20,25 @@ prevBtn.addEventListener("click", function () {
     }
     
 });
+const cardslidvan= document.getElementById("cars-slid-section-van");
+const nextBtnvan = document.getElementById("nextBtnvan");
+const prevBtnvan = document.getElementById("prevBtnvan");
+let index1 = 0;
+const totalCardsvan = document.querySelectorAll(".car-slide-van").length;
+const showCardsvan =4;
+const maxIndexvan = totalCardsvan - showCardsvan;
+nextBtnvan.addEventListener("click", function () {
+    if (index1 < maxIndexvan) {
+        index1++;
+        cardslidvan.style.transform =
+            `translateX(-${index1 * 25}%)`;
+    }
+});
+prevBtnvan.addEventListener("click", function () {
+    if (index1 > 0) {
+        index1--;
+        cardslidvan.style.transform =
+        `translateX(-${index1 * 25}%)`;
+    }
+    
+});

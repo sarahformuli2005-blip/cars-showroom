@@ -175,6 +175,12 @@ body {
   background: var(--TEN);
   border-color: var(--TEN);
 }
+
+
+
+
+
+
 /*section catagory*/
 .container .row .section-category-title {
   color: var(--five);
@@ -182,7 +188,7 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 2rem;
   font-weight: 800;
-  margin-top: 3%;
+  margin-top: 5%;
 }
 
 .container .row .card {
@@ -230,7 +236,7 @@ transform: translateY(-6px);
 
 
 #section-two {
-  margin-top: 1% !important;
+  margin-top: 5% !important;
   background: var(--primary);
   text-align: center !important;
 }
@@ -269,6 +275,11 @@ transform: translateY(-6px);
 }
 
 .car-slide {
+  padding: 0 8px;
+  box-sizing: border-box;
+  margin:0.5%;
+}
+.car-slide-van{
   padding: 0 8px;
   box-sizing: border-box;
   margin:0.5%;
@@ -673,10 +684,8 @@ width: 330px;
     border: none;
 }
 .field input:hover,select:hover,textarea:hover{
- 
-  border: 1px solid var(--TEN) ;
+  border: 1px solid var(--TEN);
 }
-
 .btn-main{ display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -696,6 +705,61 @@ width: 330px;
   background: var(--five);
   color: var(--TEN);
   transform: translateY(-2px);
+}
+footer.footer {
+    width: 100%;
+    background: #0a0a0a;
+    border-top: 1px solid var(--line);
+    padding-top: 50px;
+    padding-bottom: 20px;
+    margin-top: 7%;
+    box-sizing: border-box;
+}
 
+footer.footer .container-fluid {
+    max-width:1300px;
+    margin: 0 auto;
+}
+
+.footer .row {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.footer-bottom {
+    width: 100%;
+    max-width: 1200px;
+    margin: 36px auto 0;
+    border-top: 1px solid var(--line);
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    color: var(--muted);
+    font-size: 0.82rem;
+    box-sizing: border-box;
+}
+
+
+.footer h5 {
+    margin-bottom: 16px;
+}
+
+.footer p,
+.footer a,
+.footer li {
+    color: var(--NINE);
+    font-size: 0.9rem;
+}
+
+.footer ul {
+    list-style: none;
+    display: grid;
+    gap: 8px;
+    padding: 0;
+}
+
+.footer a:hover {
+    color: var(--TEN);
 }
 
