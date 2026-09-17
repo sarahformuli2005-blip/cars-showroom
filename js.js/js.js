@@ -8,9 +8,12 @@ const maxIndex = totalCards - showCards;
 nextBtn.addEventListener("click", function () {
     if (index < maxIndex) {
         index++;
-        cardslid.style.transform =
-            `translateX(-${index * 25}%)`;
     }
+    else{
+        index=0;
+    }
+    cardslid.style.transform =
+            `translateX(-${index * 25}%)`;
 });
 prevBtn.addEventListener("click", function () {
     if (index > 0) {
@@ -30,9 +33,12 @@ const maxIndexvan = totalCardsvan - showCardsvan;
 nextBtnvan.addEventListener("click", function () {
     if (index1 < maxIndexvan) {
         index1++;
-        cardslidvan.style.transform =
-            `translateX(-${index1 * 25}%)`;
     }
+    else{
+        index1=0;
+    }
+     cardslidvan.style.transform =
+            `translateX(-${index1 * 25}%)`;
 });
 prevBtnvan.addEventListener("click", function () {
     if (index1 > 0) {
