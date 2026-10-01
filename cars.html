@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>project</title>
+    
+    <link rel="stylesheet" href="./css/cars.css">
+    <link rel="stylesheet" href="./css/varibles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!--Botstrap icon-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <!--Google font-->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Calligraffitti&family=Caveat:wght@400..700&family=Metal+Mania&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sora:wght@100..800&display=swap"
+        rel="stylesheet">
+    <!---fon Awesome-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Start Navbar-->
+    <nav class="navbar navbar-expand-lg sticky-top " id="mainnav">
+        <div class="container" id="Logo">
+            <div class="logo-flex d-flex flex-row">
+                <img id="logo-img" src="./img/file_000000007bfc820a9ad79154b8bc36fe.png">
+                <a href="#" class="navbar-brand mb-2">AUTO<span>SURE</span></a>
+            </div>
+            <!---Mobile Toggle-->
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navoffcanvas"
+                aria-controls="navoffcanvas" id="mobile-toggle"> <i class="bi bi-list icon"></i>
+            </button>
+            <!---Disktop nav-->
+            <div class="collapse navbar-collapse justify-content-end" id="nav">
+                <ul class="nav align-items-center ms-5 " id="nav-ul">
+                    <li class="nav-item"> <a href="./index.html" class="nav-link  nav-a">HOME</a> </li>
+                    <li class="nav-item"> <a href="./cars.html" class="nav-link nav-a active"> OUR CARS</a>
+                    </li>
+                    <li class="nav-item "> <a href="#" class="nav-link nav-a">CARS OF SALE</a> </li>
+                    <li class="nav-item "> <a href="#" class="nav-link nav-a">ABOUT US</a> </li>
+                    <li class="nav-item"> <a href="#" class="nav-link nav-a ">CONTACT US</a> </li>
+
+                    <li class="nav-item"> <a href="#" class="nav-link nav-a ">Login & Register</a> </li>
+                    <li class="nav-item "><a class="nav-link nav-a nav-icons" href="wishlist.html"><i
+                                class="bi bi-heart" style="font-size: 18px;"></i><span class="icon-nav">0</span></a>
+                    </li>
+                    <button class="nav-item cart-button" id="cartButton" style="  border: none;"><i class="bi bi-cart3"
+                                style="font-size: 18px;"></i><span class="icon-nav"id="cartCount">0</span></button>
+                </ul>
+            </div>
+        </div>
+    </nav> <!--mobil menu-->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="navoffcanvas">
+        <div class="offcanvas-header" id="navoffcanvas-header">
+            <h4>Menu</h4>
+            <button class="btn-close" type="button" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav">
+                <li class="nav-item"> <a href="./index.html" class="nav-link active nav-a">HOME</a> </li>
+                <li class="nav-item"> <a href="./cars.html" class="nav-link nav-a"> OUR CARS</a>
+                </li>
+                <li class="nav-item "> <a href="#" class="nav-link nav-a">CARS OF SALE</a> </li>
+                <li class="nav-item "> <a href="#" class="nav-link nav-a">ABOUT US</a> </li>
+                <li class="nav-item"> <a href="#" class="nav-link nav-a ">CONTACT US</a> </li>
+
+                <li class="nav-item"> <a href="#" class="nav-link nav-a ">Login & Register</a> </li>
+                <li class="nav-item"><a href="wishlist.html" class="nav-link">WISHLIST (<span
+                            class="wish-count">0</span>)</a></li>
+                <li class="nav-item"><a href="cart.html" class="nav-link">CART (<span class="cart-count">0</span>)</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <main class="container">
+        <section class="section-two-card">
+            <h2>Our Cars</h2>
+            <button class="category-btn active" data-category="All">All</button>
+            <button class="category-btn " data-category="Toyota">Toyota</button>
+            <button class="category-btn " data-category="Ferrari">Ferrari</button>
+            <button class="category-btn " data-category="Bentley">Bentley</button>
+            <button class="category-btn " data-category="Aston Martin">Aston Martin</button>
+            <button class="category-btn" data-category="Lexus">Lexus</button>
+            <button class="category-btn " data-category="BMW">BMW</button>
+            <button class="category-btn " data-category="Mercedes">Mercedes</button>
+            <button class="category-btn " data-category="Lamborghini">Lamborghini</button>
+            <button class="category-btn " data-category="Cadillac">Cadillac</button>
+            <button class="category-btn " data-category="McLaren">McLaren</button>
+        </section>
+        <p id="resultcount" style="margin-bottom: 15px; color: var(--Five);"></p>
+        <section class="products-grid " id="productsContainer">
+            <div class="no-result" id="noResult">
+                <h3>No Products Found</h3>
+                <p>Try another search keyword</p>
+            </div>
+        </section>
+    </main>
+    <div class="cart-panel" id="cartpanel">
+        <div class="card-header">
+            <h2>Shopping Cart</h2>
+            <button class="close-card" id="closecart">x</button>
+        </div>
+        <div class="cart-item" id="cartitems">
+            <div class="empty-cart">Your Cart is empty</div>
+        </div>
+        <div class="card-footer">
+            <div class="total">
+                <span>Total:</span>
+                <span id="carttotal">0$</span>
+            </div>
+            <button class="checkout" id="checkoutbutton">Proceed to Checkout</button>
+        </div>
+    </div>
+</body>
+<script src="./js.js/car.js"></script>
+</html>
+
