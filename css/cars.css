@@ -91,10 +91,84 @@ body {
   font-family: "Sora", sans-serif;
   border-bottom: 2px solid var(--primary) !important;
 }
-.container{
+.video{
+    height: 400px;
+    position: relative;
+    width: 100%;
+}
+#videocar{
+    height: 100%!important;
+    display: block;
+    object-fit: cover;
+}
+.overlay{
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    height: 470px;
+    width: 100%;
+}
+.text{
+    position: absolute;
+    top: 20%;
+    bottom: 50%;
+    color: var(--five);
+}
+.header-section {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  color: var(--five);
+  
+}
+
+
+/*
+.search-box {
+    display: flex;
+    
+    padding: 10px;
+    border-radius: 12px;
+
+}
+.search-box input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 15px;
+    font-size: 17px;
+    background: var(--primary);
+    color: var(--five);
+}
+.search-box button{
+    border:none;
+    background: var(--TEN);
+    padding: 0 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+}
+.search-box button i{
+    color: var(--five);
+    font-size: 30px;
+}
+.keyboard-info{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 13px;
+    color: var(--five);
+}
+*/
+.title-section{
+  color: var(--TEN);
+  text-align: center;
+  letter-spacing:2px;
+  font-size: 13px;
+}
+#container{
     width: 90%;
     max-width: 1200px;
     margin: auto;
+    margin-top: 5%;
 }
 .section-two-card{
     display: flex;
