@@ -1100,13 +1100,8 @@ const productscontainer = document.getElementById("productsContainer");
 const noResult = document.getElementById("noResult");
 const resultcount = document.getElementById("resultcount");
 const categorybutton = document.querySelectorAll(".category-btn");
-const cartpanel = document.getElementById("cartpanel");
 const cartbutton = document.getElementById("cartButton");
-const closecart = document.getElementById("closecart");
-const cartcount = document.getElementById("cartCount")
-const cartitem = document.getElementById("cartitems");
-const carttotal = document.getElementById("carttotal");
-const checkoutbutton = document.getElementById("checkoutbutton");
+const cartcount = document.getElementById("cartCount");
 
 let selectedcategory = "All";
 let cart = [];
@@ -1150,6 +1145,131 @@ categorybutton.forEach(function (button) {
              const filteredProducts = products.filter(function (product) { return product.category.trim().toLowerCase() === category.trim().toLowerCase(); }); displayproductds(filteredProducts); selectedcategory = category;
     });
 });
+//add to cart
+function addTocart(productId) {
+    let selectedProduct = null;
+    for (let i = 0; i < products.length; i++) {
+        if (products[i].id === productId) {
+            selectedProduct = products[i];
+            break; 
+        }
+    }
 
+    if (selectedProduct === null) return;
+    let foundIndex = -1;
+    for (let i = 0; i < cart.length; i++) {
+        if (cart[i].id === productId) {
+            foundIndex = i; 
+            break;
+        }
+    }
+
+    if (foundIndex !== -1) {
+       
+        cart[foundIndex].quantity = cart[foundIndex].quantity + 1;
+    } else {
+        let newItem = {
+            id: selectedProduct.id,
+            name: selectedProduct.name,
+            price: selectedProduct.price,
+            image: selectedProduct.image,
+            quantity: 1
+        };
+        cart.push(newItem);
+    }
+    localStorage.setItem('myCart', JSON.stringify(cart));
+    updateCartDisplay();
+    
+    
+}
+
+function changeQuantity(productId, action) {
+    for (let i = 0; i < cart.length; i++) {
+        if (cart[i].id === productId) {
+            if (action === 'plus') {
+                cart[i].quantity = cart[i].quantity + 1; // زیاد کردن
+            } else if (action === 'minus') {
+                if(cart[i].quantity>1){
+                cart[i].quantity = cart[i].quantity - 1; 
+                }
+            }
+            break;
+        }
+    }
+    localStorage.setItem("cart" , JSON.stringify(cart));
+    updateCartDisplay();
+    localStorage.setItem('myCart', JSON.stringify(cart));
+    updateCartDisplay();
+}
+
+function removeItem(productId){
+        cart = cart.filter(item =>item.id !== productId);
+        localStorage.setItem("myCar" , JSON.stringify(cart));
+        updateCartDisplay();
+        showCustomAlert("kjhuihgftydtc");
+        alert("dfgyckhvl");
+    }
+function updateCartDisplay() {
+    let cartBox = document.getElementById("cartBox");
+    let cartTotal = document.getElementById("cartTotal");
+    cartcount.textContent=cart.length;
+
+    if (!cartBox) return; 
+    cartBox.innerHTML = "";
+
+    if (cart.length === 0) {
+        cartBox.innerHTML = "<p>سبد خرید شما خالی است.</p>";
+        if (cartTotal) {
+            cartTotal.textContent = "$0";
+        }
+        return;
+    }
+
+    let totalPrice = 0;
+
+    
+    for (let i = 0; i < cart.length; i++) {
+        let item = cart[i];
+        let itemTotalPrice = item.price * item.quantity; 
+        totalPrice = totalPrice + itemTotalPrice;
+
+        
+        let productDiv = document.createElement("div");
+        productDiv.style.cssText = "display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border:none; padding-bottom: 10px;";
+        
+        productDiv.innerHTML = `
+            <div class="cart-line container" style="display: flex; flex:row; align-items: center;">
+            <div class=" col-lg-3">
+                <img src="${item.image}" alt="${item.name}">
+                </div>
+                <div class="col-lg-4">
+                    <h4 style="margin: 0;">${item.name}</h4>
+                    <p style="margin: 5px 0 0 0; color: gray;">$${item.price}  <br>$${itemTotalPrice}</p>
+                </div>
+                <div class="col-lg-4 d-flex flex-row flex-nowrap">
+                 <button class="p-mbutton" onclick="changeQuantity(${item.id}, 'plus')" style="padding: 2px 8px; cursor: pointer;">+</button>
+                <span class="mt-3" style="margin: 0 8px;">${item.quantity}</span>
+                <button class="p-mbutton" onclick="changeQuantity(${item.id}, 'minus')" style="padding: 2px 8px; cursor: pointer ">-</button>
+                <button class="btn-ghost mx-3" onclick="removeItem(${item.id})" >Remove</button>
+                </div>
+            </div>
+          
+        `;
+
+        cartBox.appendChild(productDiv);
+    }
+
+    if (cartTotal) {
+        cartTotal.textContent = "$" + totalPrice.toLocaleString();
+    }
+}
+
+window.onload = function() {
+    let savedCart = localStorage.getItem('myCart');
+    if (savedCart) {
+        cart = JSON.parse(savedCart);
+        updateCartDisplay();
+    }
+};
 
 displayproductds(products);
