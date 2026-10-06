@@ -216,8 +216,7 @@ body {
  transition: 0.3s;
  position: relative;
  border: 1px solid var(--line);
- display: flex;
- flex-wrap: wrap;
+ 
  
 }
 .product-card:hover{
@@ -405,24 +404,27 @@ body {
     margin-top: 50px;
 }
 @media (max-width:1000px){
-    .prodcuts-grid{
-        grid-template-columns: repeat(3,1ft);
+    .products-grid{
+        grid-template-columns: repeat(4,1fr);
     }
-
-    
 }
 @media (max-width:720px) {
-    .prodcuts-grid{
-        grid-template-columns: repeat(2,1ft);
+    .products-grid{
+        grid-template-columns:1fr;
     }
     .hero h1{
         font-size: 32px;
     }
 }
 @media (max-width:500px) {
-    .prodcuts-grid{
-        grid-template-columns: 1ft;
+    .products-grid{
+        grid-template-columns:1fr;
+    }
+    header{padding: 15px;} 
+}
+@media (max-width:360px) {
+    .products-grid{
+        grid-template-columns: 1fr;
     }
     header{padding: 15px;}
-    
 }
