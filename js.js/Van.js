@@ -6,7 +6,7 @@ const products = [
         price: 85000,
         oldprice: 92000,
         discount: 7,
-        image: "../img/Mercedes-Benz V-Class 2026.jpg",
+        image: "img/Mercedes-Benz V-Class 2026.jpg",
         description: "2026 · 12 miles · V220d Diessel"
     },
 
@@ -832,6 +832,8 @@ const products = [
     },
 
 ];
+const page = 8;
+let currentpage = 1;
 const productscontainer = document.getElementById("productsContainer");
 const noResult = document.getElementById("noResult");
 const resultcount = document.getElementById("resultcount");
@@ -840,21 +842,23 @@ const cartbutton = document.getElementById("cartButton");
 const cartcount = document.getElementById("cartCount");
 const searchInput = document.getElementById("searchInput");
 const searchButton = document.getElementById("searchButton");
+const destinationpagination = document.getElementById("destination-pagination");
 
 let selectedcategory = "All";
 let cart = [];
+let filtereddestination = [...products];
 function displayproductds(productList) {
     productscontainer.innerHTML = "";
     if (productList.length === 0) {
         productscontainer.appendChild(noResult);
-        noResult.style.display = "#FF5500";
+        noResult.style.display = "block";
         resultcount.textContent = "0 Products Found";
         return;
     }
 
     noResult.style.display = "none";
     productList.forEach(function (product) {
-        const productCart = document.createElement("div");
+         const productCart = document.createElement("div");
         productCart.classList.add("product-card");
         productCart.innerHTML = `
         <span class="discount">${product.discount}%OFF</span>
@@ -862,25 +866,31 @@ function displayproductds(productList) {
         <div class="product-info">
         <div class="product-category">${product.category}</div>
         <h3 class="product-name">${product.name}</h3>
-        <p class"product-description">${product.description}</p>
+        <p class="product-description">${product.description}</p>
         <div class="price"><span class="old-price">$${product.oldprice}</span></div>
         <button class="add-cart" onclick="addTocart(${product.id})">Add to Cart</button>
         </div>
         `;
         productscontainer.appendChild(productCart);
     });
-    resultcount.textContent = `${productList.length}product(s) found`;
+    resultcount.textContent = `${filtereddestination.length} Products`;
 }
 categorybutton.forEach(function (button) {
     button.addEventListener("click", function () {
         const category = button.dataset.category;
         categorybutton.forEach(function (btn) { btn.classList.remove("active"); });
-         button.classList.add("active"); 
-         if (category === "All") { displayproductds(products); 
-            selectedcategory = "All"; 
-            return; 
+        button.classList.add("active");
+        if (category === "All") {
+            filtereddestination = [...products];
+            selectedcategory = "All";
+            currentpage = 1;
+            rendercard();
+            return;
         }
-             const filteredProducts = products.filter(function (product) { return product.category.trim().toLowerCase() === category.trim().toLowerCase(); }); displayproductds(filteredProducts); selectedcategory = category;
+        const filteredProducts = products.filter(function (product) { return product.category.trim().toLowerCase() === category.trim().toLowerCase(); }); filtereddestination = filteredProducts;
+        selectedcategory = category;
+        currentpage = 1;
+        rendercard();
     });
 });
 /*function searchProducts(){
@@ -903,7 +913,7 @@ function addTocart(productId) {
     for (let i = 0; i < products.length; i++) {
         if (products[i].id === productId) {
             selectedProduct = products[i];
-            break; 
+            break;
         }
     }
 
@@ -911,13 +921,13 @@ function addTocart(productId) {
     let foundIndex = -1;
     for (let i = 0; i < cart.length; i++) {
         if (cart[i].id === productId) {
-            foundIndex = i; 
+            foundIndex = i;
             break;
         }
     }
 
     if (foundIndex !== -1) {
-       
+
         cart[foundIndex].quantity = cart[foundIndex].quantity + 1;
     } else {
         let newItem = {
@@ -931,8 +941,8 @@ function addTocart(productId) {
     }
     localStorage.setItem('myCart', JSON.stringify(cart));
     updateCartDisplay();
-    
-    
+
+
 }
 
 function changeQuantity(productId, action) {
@@ -941,32 +951,30 @@ function changeQuantity(productId, action) {
             if (action === 'plus') {
                 cart[i].quantity = cart[i].quantity + 1; // زیاد کردن
             } else if (action === 'minus') {
-                if(cart[i].quantity>1){
-                cart[i].quantity = cart[i].quantity - 1; 
+                if (cart[i].quantity > 1) {
+                    cart[i].quantity = cart[i].quantity - 1;
                 }
             }
             break;
         }
     }
-    localStorage.setItem("cart" , JSON.stringify(cart));
+    localStorage.setItem("myCart", JSON.stringify(cart));
     updateCartDisplay();
     localStorage.setItem('myCart', JSON.stringify(cart));
     updateCartDisplay();
 }
 
-function removeItem(productId){
-        cart = cart.filter(item =>item.id !== productId);
-        localStorage.setItem("myCar" , JSON.stringify(cart));
-        updateCartDisplay();
-        showCustomAlert("kjhuihgftydtc");
-        alert("dfgyckhvl");
-    }
+function removeItem(productId) {
+    cart = cart.filter(item => item.id !== productId);
+    localStorage.setItem("myCart", JSON.stringify(cart));
+    updateCartDisplay();
+}
 function updateCartDisplay() {
     let cartBox = document.getElementById("cartBox");
     let cartTotal = document.getElementById("cartTotal");
-    cartcount.textContent=cart.length;
+    cartcount.textContent = cart.length;
 
-    if (!cartBox) return; 
+    if (!cartBox) return;
     cartBox.innerHTML = "";
 
     if (cart.length === 0) {
@@ -979,16 +987,16 @@ function updateCartDisplay() {
 
     let totalPrice = 0;
 
-    
+
     for (let i = 0; i < cart.length; i++) {
         let item = cart[i];
-        let itemTotalPrice = item.price * item.quantity; 
+        let itemTotalPrice = item.price * item.quantity;
         totalPrice = totalPrice + itemTotalPrice;
 
-        
+
         let productDiv = document.createElement("div");
         productDiv.style.cssText = "display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border:none; padding-bottom: 10px;";
-        
+
         productDiv.innerHTML = `
             <div class="cart-line container" style="display: flex; flex:row; align-items: center;">
             <div class=" col-lg-3">
@@ -1016,12 +1024,139 @@ function updateCartDisplay() {
     }
 }
 
-window.onload = function() {
+window.onload = function () {
     let savedCart = localStorage.getItem('myCart');
     if (savedCart) {
         cart = JSON.parse(savedCart);
         updateCartDisplay();
     }
 };
+function rendercard() {
+    const start = (currentpage - 1) * page;
+    const end = start + page;
+    const pageitem = filtereddestination.slice(start, end);
+    displayproductds(pageitem);
+    renderpagination();
+}
 
-displayproductds(products);
+function renderpagination() {
+
+    const totalpage = Math.ceil(filtereddestination.length / page);
+
+    destinationpagination.innerHTML = "";
+
+    if (totalpage <= 1) {
+        return;
+    }
+
+    // دکمه قبلی
+    const previousbutton = document.createElement("button");
+
+    previousbutton.className = "pagination-btn";
+
+    previousbutton.innerHTML = `
+        <i class="fa-solid fa-chevron-left"></i>
+    `;
+
+    previousbutton.disabled = currentpage === 1;
+
+    previousbutton.addEventListener("click", () => {
+
+        if (currentpage > 1) {
+
+            currentpage--;
+
+            rendercard();
+
+            secolltodestination();
+        }
+    });
+
+    destinationpagination.appendChild(previousbutton);
+
+
+    // مشخص کردن اولین شماره‌ای که باید نمایش داده شود
+    let startPage = currentpage;
+
+    // در صفحه اول، شماره‌ها از 1 شروع شوند
+    if (currentpage === 1) {
+        startPage = 1;
+    }
+
+    // اگر به آخر صفحات رسیدیم،
+    // سه شماره آخر نمایش داده شوند
+    if (currentpage > totalpage - 2) {
+        startPage = Math.max(1, totalpage - 2);
+    }
+
+
+    // فقط سه شماره صفحه نمایش داده شود
+    for (
+        let pages = startPage;
+        pages <= Math.min(startPage + 2, totalpage);
+        pages++
+    ) {
+
+        const button = document.createElement("button");
+
+        button.className = "pagination-btn";
+
+        button.textContent = pages;
+
+        if (pages === currentpage) {
+            button.classList.add("active");
+        }
+
+        button.addEventListener("click", () => {
+
+            currentpage = pages;
+
+            rendercard();
+
+            secolltodestination();
+        });
+
+        destinationpagination.appendChild(button);
+    }
+
+
+    // دکمه بعدی
+    const nextbutton = document.createElement("button");
+
+    nextbutton.className = "pagination-btn";
+
+    nextbutton.innerHTML = `
+        <i class="fa-solid fa-chevron-right"></i>
+    `;
+
+    nextbutton.disabled = currentpage === totalpage;
+
+    nextbutton.addEventListener("click", () => {
+
+        if (currentpage < totalpage) {
+
+            currentpage++;
+
+            rendercard();
+
+            secolltodestination();
+        }
+    });
+
+    destinationpagination.appendChild(nextbutton);
+}
+
+
+rendercard();
+
+
+function secolltodestination() {
+    const section = document.getElementById("prodc");
+    if (!section) return;
+    section.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+}
+
+rendercard();

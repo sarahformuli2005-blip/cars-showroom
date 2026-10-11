@@ -403,6 +403,69 @@ body {
     color: var(--five);
     margin-top: 50px;
 }
+
+/* خود بخش Pagination */
+#destination-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-direction: row !important;
+    flex-wrap: nowrap;
+}
+
+
+/* دکمه‌های Pagination */
+.pagination-btn {
+    width: 42px;
+    height: 42px;
+
+    border: 2px solid var(--line);
+    border-radius: 10px;
+
+    background: var(--primary);
+    color: var(--five);
+
+    font-family: "Sora", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: all 0.25s ease;
+
+    flex-direction: row !important;
+
+    flex-shrink: 0;
+}
+
+
+/* Hover */
+.pagination-btn:hover:not(:disabled) {
+    color: var(--five);
+    border-color: var(--TEN);
+}
+
+
+/* صفحه فعال */
+.pagination-btn.active {
+    color:var(--five);
+    border: none;
+    background: var(--TEN);
+}
+
+
+/* دکمه غیرفعال */
+.pagination-btn:disabled {
+    opacity: 1;
+    cursor: not-allowed;
+}
+
+
 @media (max-width:1000px){
     .products-grid{
         grid-template-columns: repeat(4,1fr);
