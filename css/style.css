@@ -140,8 +140,8 @@ body {
   margin-top: 1%;
 }
 
-#btn2-section-one ,
-#btn-section-one {
+.btn2-section-one ,
+.btn-section-one {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -153,25 +153,25 @@ body {
   cursor: pointer;
 }
 
-#btn-section-one {
+.btn-section-one {
   background: var(--TEN);
   color: var(--five);
   border-color: var(--TEN);
 }
 
-#btn-section-one:hover {
+.btn-section-one:hover {
   background: var(--five);
   color: var(--TEN);
   transform: translateY(-2px);
 }
 
-#btn2-section-one {
+.btn2-section-one {
   background: transparent;
   color: var(--five);
   border-color: var(--five);
 }
 
-#btn2-section-one:hover {
+.btn2-section-one:hover {
   background: var(--TEN);
   border-color: var(--TEN);
 }

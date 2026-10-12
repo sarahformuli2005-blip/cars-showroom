@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>project</title>
-    
+
     <link rel="stylesheet" href="./css/cart.css">
     <link rel="stylesheet" href="./css/cars.css">
 
@@ -50,9 +50,9 @@
                     <li class="nav-item "><a class="nav-link nav-a nav-icons" href="wishlist.html"><i
                                 class="bi bi-heart" style="font-size: 18px;"></i><span class="icon-nav">0</span></a>
                     </li>
-                    <li class="nav-item "><a class="nav-link nav-a nav-icons" href="./cart.html"id="cartButton"><i
-                                i class="bi bi-cart3"
-                                style="font-size: 18px;"></i><span class="icon-nav"id="cartCount">0</span></a>
+                    <li class="nav-item "><a class="nav-link nav-a nav-icons" href="./cart.html" id="cartButton"><i i
+                                class="bi bi-cart3" style="font-size: 18px;"></i><span class="icon-nav"
+                                id="cartCount">0</span></a>
                     </li>
                 </ul>
             </div>
@@ -73,49 +73,54 @@
                 <li class="nav-item"> <a href="#" class="nav-link nav-a ">CONTACT US</a> </li>
 
                 <li class="nav-item"> <a href="#" class="nav-link nav-a ">Login & Register</a> </li>
-                <li class="nav-item"><a href="#" class="nav-link">WISHLIST (<span
-                            class="wish-count">0</span>)</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">WISHLIST (<span class="wish-count">0</span>)</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">CART (<span class="cart-count">0</span>)</a>
                 </li>
             </ul>
         </div>
     </div>
-     <section class="page-hero"><div class="container-site"><p class="eyebrow">Reservation</p><h1>Your Cart</h1><p class="section-copy" style="margin:12px 0 0">Add, change quantity, or remove. This list stays in localStorage.</p></div></section>
+    <section class="page-hero">
+        <div class="container">
+            <p class="eyebrow">Reservation</p>
+            <h1>Your Cart</h1>
+            <p class="section-copy" style="margin:12px 0 0">Add, change quantity, or remove. This list stays in
+                localStorage.</p>
+        </div>
+    </section>
     <section class="section">
         <div class="container">
             <div class=" row">
-            <div id="cartBox" class=" col-lg-7 col-12"></div>
-            <div class="col-lg-5 col-12"class="checkout-box"style="background: #151515 !important;border: 1px solid var(--line) !important;
+                <div id="cartBox" class=" col-lg-7 col-12"></div>
+                <div class="col-lg-5 col-12" class="checkout-box" style="background: #151515 !important;border: 1px solid var(--line) !important;
             border-radius: 16px!important;padding: 20px!important; ">
-                <h3>Summary</h3>
-                <div class="spec-list">
-                    <div><span>Total</span><strong id="cartTotal">$0</strong></div>
-                    <div><span>Hold deposit</span><strong>$2,500</strong></div>
+                    <h3>Summary</h3>
+                    <div class="spec-list">
+                        <div><span>Total</span><strong id="cartTotal">$0</strong></div>
+                        <div><span>Hold deposit</span><strong>$2,500</strong></div>
+                    </div>
+                    <a class="btn-main w-100 justify-content-center mt-3" href="contact.html">Request purchase</a>
+                    <a class="btn-ghost w-100 justify-content-center mt-2" href="cars.html">Keep shopping</a>
                 </div>
-                <a class="btn-main w-100 justify-content-center mt-3" href="contact.html">Request purchase</a>
-                <a class="btn-ghost w-100 justify-content-center mt-2" href="cars.html">Keep shopping</a>
-            </div>
             </div>
         </div>
         <div class="cart-panel" id="cartpanel">
-        <div class="card-header">
-            <h2>Shopping Cart</h2>
-            <button class="close-card" id="closecart">x</button>
-        </div>
-        <div class="cart-item" id="cartitems">
-            <div class="empty-cart">Your Cart is empty</div>
-        </div>
-        <div class="card-footer">
-            <div class="total">
-                <span>Total:</span>
-                <span id="carttotal">0$</span>
+            <div class="card-header">
+                <h2>Shopping Cart</h2>
+                <button class="close-card" id="closecart">x</button>
             </div>
-            <button class="checkout" id="checkoutbutton">Proceed to Checkout</button>
+            <div class="cart-item" id="cartitems">
+                <div class="empty-cart">Your Cart is empty</div>
+            </div>
+            <div class="card-footer">
+                <div class="total">
+                    <span>Total:</span>
+                    <span id="carttotal">0$</span>
+                </div>
+                <button class="checkout" id="checkoutbutton">Proceed to Checkout</button>
+            </div>
         </div>
-    </div>
     </section>
 </body>
 <script src="./js.js/car.js"></script>
 
 </html>
-

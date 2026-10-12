@@ -48,3 +48,11 @@ prevBtnvan.addEventListener("click", function () {
     }
     
 });
+const btncar =document.getElementById("btncar");
+btncar.addEventListener("click",function(){
+    window.location.href ="cars.html"
+});
+const btnaboutus =document.getElementById("btnaboutus");
+btnaboutus.addEventListener("click",function(){
+    window.location.href ="aboutus.html"
+});
