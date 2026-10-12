@@ -450,6 +450,11 @@ transform: translateY(-6px);
 
 
 
+
+#section-five{
+  margin-top: 5%;
+}
+/*section three*/
 #section-three{
  background: linear-gradient(180deg, #171717, #101010);
   margin-top: 3%;
@@ -476,12 +481,7 @@ transform: translateY(-6px);
 .statistics .text-section-three p{
   color: var(--NINE );
 }
-
-#section-five{
-  margin-top: 5%;
-}
-/*section three*/
-
+ 
 #section-six {
   margin-top: 5%;
   text-align: center;
