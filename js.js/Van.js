@@ -861,14 +861,26 @@ function displayproductds(productList) {
          const productCart = document.createElement("div");
         productCart.classList.add("product-card");
         productCart.innerHTML = `
+        <div class="card-section-two">
+         <div class="featured-image-wrap">
         <span class="discount">${product.discount}%OFF</span>
+        <button type="button" class="favorite-btn" aria-label="Add to favorites">
+        <i class="bi bi-heart"></i>
+    </button>
         <img class="product-img" src="${product.image}" alt="${product.name}"/>
+        </div>
         <div class="product-info">
         <div class="product-category">${product.category}</div>
         <h3 class="product-name">${product.name}</h3>
         <p class="product-description">${product.description}</p>
-        <div class="price"><span class="old-price">$${product.oldprice}</span></div>
+        <div class="price">
+         $${Number(product.price).toLocaleString()}
+        <span class="old-price">
+         $${Number(product.oldprice).toLocaleString()}
+         </span>
+                    </div>
         <button class="add-cart" onclick="addTocart(${product.id})">Add to Cart</button>
+        </div>
         </div>
         `;
         productscontainer.appendChild(productCart);
@@ -984,19 +996,13 @@ function updateCartDisplay() {
         }
         return;
     }
-
     let totalPrice = 0;
-
-
     for (let i = 0; i < cart.length; i++) {
         let item = cart[i];
         let itemTotalPrice = item.price * item.quantity;
         totalPrice = totalPrice + itemTotalPrice;
-
-
         let productDiv = document.createElement("div");
         productDiv.style.cssText = "display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border:none; padding-bottom: 10px;";
-
         productDiv.innerHTML = `
             <div class="cart-line container" style="display: flex; flex:row; align-items: center;">
             <div class=" col-lg-3">
@@ -1013,9 +1019,7 @@ function updateCartDisplay() {
                 <button class="btn-ghost mx-3" onclick="removeItem(${item.id})" >Remove</button>
                 </div>
             </div>
-          
         `;
-
         cartBox.appendChild(productDiv);
     }
 
@@ -1040,116 +1044,71 @@ function rendercard() {
 }
 
 function renderpagination() {
-
     const totalpage = Math.ceil(filtereddestination.length / page);
-
     destinationpagination.innerHTML = "";
-
     if (totalpage <= 1) {
         return;
     }
-
-    // دکمه قبلی
     const previousbutton = document.createElement("button");
-
     previousbutton.className = "pagination-btn";
-
     previousbutton.innerHTML = `
         <i class="fa-solid fa-chevron-left"></i>
     `;
-
     previousbutton.disabled = currentpage === 1;
-
     previousbutton.addEventListener("click", () => {
-
         if (currentpage > 1) {
-
             currentpage--;
-
             rendercard();
-
             secolltodestination();
         }
     });
 
     destinationpagination.appendChild(previousbutton);
-
-
-    // مشخص کردن اولین شماره‌ای که باید نمایش داده شود
     let startPage = currentpage;
-
-    // در صفحه اول، شماره‌ها از 1 شروع شوند
     if (currentpage === 1) {
         startPage = 1;
     }
 
-    // اگر به آخر صفحات رسیدیم،
-    // سه شماره آخر نمایش داده شوند
     if (currentpage > totalpage - 2) {
         startPage = Math.max(1, totalpage - 2);
     }
 
-
-    // فقط سه شماره صفحه نمایش داده شود
     for (
         let pages = startPage;
         pages <= Math.min(startPage + 2, totalpage);
         pages++
     ) {
-
         const button = document.createElement("button");
-
         button.className = "pagination-btn";
-
         button.textContent = pages;
-
         if (pages === currentpage) {
             button.classList.add("active");
         }
-
         button.addEventListener("click", () => {
-
             currentpage = pages;
-
             rendercard();
-
             secolltodestination();
         });
-
         destinationpagination.appendChild(button);
     }
-
-
-    // دکمه بعدی
     const nextbutton = document.createElement("button");
-
     nextbutton.className = "pagination-btn";
-
     nextbutton.innerHTML = `
         <i class="fa-solid fa-chevron-right"></i>
     `;
-
     nextbutton.disabled = currentpage === totalpage;
-
     nextbutton.addEventListener("click", () => {
 
         if (currentpage < totalpage) {
-
             currentpage++;
-
             rendercard();
-
             secolltodestination();
         }
     });
 
     destinationpagination.appendChild(nextbutton);
 }
-
-
 rendercard();
-
-
 function secolltodestination() {
     const section = document.getElementById("prodc");
     if (!section) return;

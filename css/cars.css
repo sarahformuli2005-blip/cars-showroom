@@ -210,30 +210,76 @@ body {
     margin-bottom: 50px;
 }
 .product-card{
- background: var(--primary);
- border-radius: 12px;
- overflow: hidden;
- transition: 0.3s;
- position: relative;
- border: 1px solid var(--line);
+ flex: 0 0 calc((100% - 54px) / 4);
+    min-width: 0;
+    display: flex;
+    padding: 0;
+    margin: 0;
  
- 
+}
+
+.product-card .card-section-two {
+    width: 100%;
+    min-width: 0;
+    height: 100%;
+    padding: 12px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: linear-gradient(160deg, #1c1c1c, #101010);
+    text-align: left;
+    transition: border-color 0.25s ease, transform 0.25s ease;
 }
 .product-card:hover{
     transform: translateY(-5px);
+    border-color: var(--TEN);
     
 }
+
+ .featured-image-wrap {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #202020;
+}
+
+
+
+.featured-image-wrap .favorite-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 5;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+     background: rgba(0, 0, 0, 0.55);
+    color: var(--five);
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.featured-image-wrap .favorite-btn:hover {
+    background: #ff304f;
+    color: white;
+    transform: scale(1.1);
+}
 .product-img{
+    display: block;
     width: 100%;
     height: 190px;
     object-fit: cover;
-    padding: 3%;
-    border-radius: 10px;
+    transition: transform 0.35s ease;
 }
 .discount{
     position: absolute;
     top: 10px;
-    left: 10px;
+    left: 5px;
     background: var(--five);
     color: var(--primary);
     padding: 5px 9px;
@@ -242,46 +288,59 @@ body {
     font-weight: bold;
 }
 .product-info{
-    padding: 16px;
+     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px 3px 3px;
 }
-.product-category{
-    font-size: 12px;
-    color: var(--five);
-    font-weight: bold;
+ .product-category {
+    color: var(--TEN);
+    font-size: 0.75rem;
+    font-weight: 700;
     text-transform: uppercase;
+    letter-spacing: 1px;
 }
-.product-name{
-    font-size: 18px;
-    margin: 7px 0;
-}
-.product-description{
-    font-size: 13px;
+
+ .product-name {
+    min-height: 48px;
+    margin: 8px 0;
     color: var(--five);
-    min-height: 38px;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5;
 }
+
+ .product-description {
+    margin-bottom: 12px;
+    color: var(--NINE);
+    font-size: 0.78rem;
+    line-height: 1.6;
+}
+
 .price{
-    margin: 12px 0;
+   margin-bottom: 14px;
+    color: var(--TEN);
+    font-size: 1.05rem;
+    font-weight: 800;
 }
-.new.price{
-    color: var(--five);
-    font-size: 20px;
-    font-weight: bold;
-}
+
 .old-price{
+   color: #929292;
+    font-size: 0.8rem;
+    font-weight: 400;
     text-decoration: line-through;
-    color: var(--five);
-    margin-left: 7px;
-    font-size: 13px;
 }
 .add-cart{
-    width: 100%;
-    border:none;
-    background: var(--TEN);
-    color: var(--five);
+     width: 100%;
+    margin-top: auto;
     padding: 11px;
-    border-radius: 7px;
+    border: 1px solid var(--TEN);
+    border-radius: 9px;
+    background: var(--TEN);
+    color: #fff;
+    font-weight: 700;
     cursor: pointer;
-    font-weight: bold;
+    transition: background 0.25s ease, color 0.25s ease;
     
 }
 .add-cart:hover{
@@ -404,7 +463,7 @@ body {
     margin-top: 50px;
 }
 
-/* خود بخش Pagination */
+
 #destination-pagination {
     display: flex;
     align-items: center;
@@ -415,7 +474,7 @@ body {
 }
 
 
-/* دکمه‌های Pagination */
+
 .pagination-btn {
     width: 42px;
     height: 42px;
@@ -444,14 +503,13 @@ body {
 }
 
 
-/* Hover */
+
 .pagination-btn:hover:not(:disabled) {
     color: var(--five);
     border-color: var(--TEN);
 }
 
 
-/* صفحه فعال */
 .pagination-btn.active {
     color:var(--five);
     border: none;
@@ -459,7 +517,6 @@ body {
 }
 
 
-/* دکمه غیرفعال */
 .pagination-btn:disabled {
     opacity: 1;
     cursor: not-allowed;

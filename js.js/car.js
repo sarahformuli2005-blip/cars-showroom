@@ -1124,15 +1124,27 @@ function displayproductds(productList) {
     productList.forEach(function (product) {
         const productCart = document.createElement("div");
         productCart.classList.add("product-card");
-        productCart.innerHTML = `
+          productCart.innerHTML = `
+        <div class="card-section-two">
+         <div class="featured-image-wrap">
         <span class="discount">${product.discount}%OFF</span>
+        <button type="button" class="favorite-btn" aria-label="Add to favorites">
+        <i class="bi bi-heart"></i>
+    </button>
         <img class="product-img" src="${product.image}" alt="${product.name}"/>
+        </div>
         <div class="product-info">
         <div class="product-category">${product.category}</div>
         <h3 class="product-name">${product.name}</h3>
         <p class="product-description">${product.description}</p>
-        <div class="price"><span class="old-price">$${product.oldprice}</span></div>
+        <div class="price">
+         $${Number(product.price).toLocaleString()}
+        <span class="old-price">
+         $${Number(product.oldprice).toLocaleString()}
+         </span>
+                    </div>
         <button class="add-cart" onclick="addTocart(${product.id})">Add to Cart</button>
+        </div>
         </div>
         `;
         productscontainer.appendChild(productCart);
@@ -1213,7 +1225,7 @@ function changeQuantity(productId, action) {
     for (let i = 0; i < cart.length; i++) {
         if (cart[i].id === productId) {
             if (action === 'plus') {
-                cart[i].quantity = cart[i].quantity + 1; // زیاد کردن
+                cart[i].quantity = cart[i].quantity + 1; 
             } else if (action === 'minus') {
                 if (cart[i].quantity > 1) {
                     cart[i].quantity = cart[i].quantity - 1;
@@ -1242,7 +1254,7 @@ function updateCartDisplay() {
     cartBox.innerHTML = "";
 
     if (cart.length === 0) {
-        cartBox.innerHTML = "<p>سبد خرید شما خالی است.</p>";
+        cartBox.innerHTML = "<p>Your cart is empty</p>";
         if (cartTotal) {
             cartTotal.textContent = "$0";
         }
@@ -1313,7 +1325,7 @@ function renderpagination() {
         return;
     }
 
-    // دکمه قبلی
+  
     const previousbutton = document.createElement("button");
 
     previousbutton.className = "pagination-btn";
@@ -1339,22 +1351,16 @@ function renderpagination() {
     destinationpagination.appendChild(previousbutton);
 
 
-    // مشخص کردن اولین شماره‌ای که باید نمایش داده شود
+   
     let startPage = currentpage;
 
-    // در صفحه اول، شماره‌ها از 1 شروع شوند
+   
     if (currentpage === 1) {
         startPage = 1;
     }
-
-    // اگر به آخر صفحات رسیدیم،
-    // سه شماره آخر نمایش داده شوند
     if (currentpage > totalpage - 2) {
         startPage = Math.max(1, totalpage - 2);
     }
-
-
-    // فقط سه شماره صفحه نمایش داده شود
     for (
         let pages = startPage;
         pages <= Math.min(startPage + 2, totalpage);
@@ -1370,50 +1376,29 @@ function renderpagination() {
         if (pages === currentpage) {
             button.classList.add("active");
         }
-
         button.addEventListener("click", () => {
-
             currentpage = pages;
-
             rendercard();
-
             secolltodestination();
         });
-
         destinationpagination.appendChild(button);
     }
-
-
-    // دکمه بعدی
     const nextbutton = document.createElement("button");
-
     nextbutton.className = "pagination-btn";
-
     nextbutton.innerHTML = `
         <i class="fa-solid fa-chevron-right"></i>
     `;
-
     nextbutton.disabled = currentpage === totalpage;
-
     nextbutton.addEventListener("click", () => {
-
         if (currentpage < totalpage) {
-
             currentpage++;
-
             rendercard();
-
             secolltodestination();
         }
     });
-
     destinationpagination.appendChild(nextbutton);
 }
-
-
 rendercard();
-
-
 function secolltodestination() {
     const section = document.getElementById("prodc");
     if (!section) return;
