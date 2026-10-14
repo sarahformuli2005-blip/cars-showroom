@@ -1,0 +1,70 @@
+/*section one*/
+#hero-section {
+  background-image: url(../img/7cd79dddaa566fd2548c5912af13e5f9.jpg);
+  background-size: cover;
+  background-position:50% 40% ;
+  background-repeat:no-repeat;
+  width: 100%;
+  height: 380px;
+  position: relative;
+}
+.section-one h1{
+  color: var(--color-two);
+  font-size: 2rem;
+  font-weight: 800;
+  margin-top: 8.5%;
+  text-align: center;
+  word-spacing: 3px;
+
+
+}
+/*LOCATION*/
+#contact {
+  background: var(--color-two);
+  margin-bottom: 4%;
+}
+.map-card{
+    overflow:hidden;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    min-height:420px;
+    border: 1px solid var(--primary-one);
+}
+
+.map-card img{
+    width:100%;
+    height:100%;
+}
+.form-div {
+  width: 370px !important;
+   background:#fff;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    padding:3% 1%!important;
+     border: 1px solid var(--primary-one);
+}
+
+.form-div h3 {
+  color: var(--primary);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+.form-div textarea {
+  border-color: var(--primary-one);
+  background: var(--text-hover);
+}
+.form-div input {
+  border-color: var(--primary-one);
+  background: var(--text-hover);
+}
+.form-div button {
+  border: 2px solid var(--primary-one);
+  border-radius: 64px 64px 48px 10px;
+  padding: 6px 35px;
+  background: var(--bg-1);
+  color: #fff;
+  font-size: 1, 3rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: 600;
+}

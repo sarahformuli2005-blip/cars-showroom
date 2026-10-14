@@ -1,0 +1,359 @@
+#mainnav {
+  background: var(--primary);
+   border-bottom: 1px solid var(--line);
+}
+
+.auth-container {
+    width: 100%;
+    max-width:1000px!important;
+    padding: 30px;
+    margin-top: 5%!important;
+    
+}
+
+.auth-box {
+    position: relative;
+    width: 100%;
+    height: 650px;
+    background: linear-gradient(160deg, #1c1c1c, #101010);
+    border-radius: 25px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+   
+}
+
+forms-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+}
+.form {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    transition:var(--transition);
+}
+.login-form {
+    left: 0;
+    transform: translateX(0);
+    opacity: 1;
+}
+
+
+.register-form {
+    left: 0;
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+
+.form-content {
+    width: 100%;
+    max-width: 400px;
+   
+}
+
+
+.form-icon {
+    display: inline-flex;
+    width: 55px;
+    height: 55px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--light-lavender);
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+
+h1 {
+    font-family: var(--font-display);
+    font-size: 42px;
+    color: var(--soft-plum);
+    margin-bottom: 10px;
+}
+.form-subtitle {
+    color: var(--five);
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    margin-bottom: 18px;
+}
+.input-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--TEN);
+}
+
+
+.input-group input {
+    width: 100%;
+    height: 52px;
+    padding: 0 16px;
+    border: 1px solid var(--line);
+    border-radius: 15px!important;
+    background: var(--primary);
+    color: var(--five);
+    font-family:"Sora",sans-serif;
+    outline: none;
+    transition: 0.3s;
+}
+
+
+.input-group input:focus {
+    border-color: var(--TEN);
+}
+
+.input-group input::placeholder {
+    color: #94A3B8;
+}
+.main-btn {
+    width: 100%;
+    height: 52px;
+    border: none;
+    border-radius:20px;
+    background: var(--TEN);
+    color: var(--five);
+    font-family:"Sora",sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+.main-btn:hover {
+    transform: translateY(-2px);
+    background: var(--five);
+    color: var(--TEN);
+}
+
+
+.message {
+    min-height: 22px;
+    margin-top: 14px;
+    text-align: center;
+    font-size: 13px;
+}
+.success {
+    color:var(--FOUR-TWO);
+}
+.error {
+    color:var(--TWO-THREE);
+}
+.slider-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 0!important;
+    z-index: 10;
+    transition:var(--transition);
+        
+}
+
+
+.slider-panel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background:url(../img/Ford\ Nugget\ Camper\ 2026.jpg) ;
+    transition:var(--transition)
+        
+}
+.overlay{
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+}
+
+.slider-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color:var(--five);
+    transition:var(--transition);
+        
+}
+.login-panel {
+    transform: translateX(0);
+    opacity: 1;
+}
+.register-panel {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+.panel-icon {
+    font-size: 55px;
+    margin-bottom: 25px;
+}
+.slider-content h2 {
+    font-family: "Sora",sans-serif;
+    font-size: 42px;
+    margin-bottom: 18px;
+}
+
+
+.slider-content p {
+    max-width: 350px;
+    line-height: 1.8;
+    font-size: 14px;
+    margin-bottom: 30px;
+    color:var(--five);
+}
+
+
+.outline-btn {
+    min-width: 150px;
+    height: 48px;
+    padding: 0 25px;
+    border-radius:20px;
+    border: 1px solid var(--white);
+    background: var(--TEN);
+    color: var(--five);
+    font-family: "Sora",sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+.outline-btn:hover {
+    background: var(--five);
+    color: var(--TEN);
+    transform: translateY(-2px);
+}
+
+.auth-box.register-active
+.login-form {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+
+.auth-box.register-active
+.register-form {
+    transform: translateX(100%);
+    opacity: 1;
+}
+.auth-box.register-active
+.slider-container {
+    transform: translateX(-100%);
+    border-radius:0 20px 20px 0;
+       
+}
+
+
+.auth-box.register-active
+.login-panel {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+.auth-box.register-active
+.register-panel {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.mobile-switch {
+    display: none;
+    text-align: center;
+    margin-top: 25px;
+    font-size: 13px;
+    color: var(--five);
+}
+.mobile-switch button {
+    border: none;
+    background: none;
+    color: var(--TEN);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+@media (max-width: 800px) {
+    body {
+        align-items: flex-start;
+    }
+    .auth-container {
+        padding: 20px;
+    }
+    .auth-box {
+        height: auto;
+        min-height: 650px;
+        justify-content: center!important;
+    }
+
+    .slider-container {
+        display: none;
+    }
+
+    .form {
+        position: relative;
+        width: 100%;
+        padding: 45px 30px;
+        transform: none !important;
+        opacity: 1 !important;
+    }
+    .forms-container {
+        position: relative;
+        display: block;
+        height: auto;
+    }
+    .register-form {
+        display: none;
+        transform: none;
+    }
+    .auth-box.register-active
+    .login-form {
+        display: none;
+    }
+    .auth-box.register-active
+    .register-form {
+        display: flex;
+    }
+    .mobile-switch {
+        display: block;
+    }
+    h1 {
+        font-size: 34px;
+    }
+}
+
+@media (max-width: 450px) {
+    .auth-container {
+        padding: 10px;
+    }
+    .auth-box {
+        border-radius: var(--radius-md);
+    }
+    .form {
+        padding: 35px 22px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+}
+   

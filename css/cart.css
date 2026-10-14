@@ -1,29 +1,4 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  }
 
-html {
-scroll-behavior: smooth;
-}
-
-body {
-background: var(--primary) !important;
-color: var(--five) !important;
-font-family: "Sora", sans-serif;
-overflow-x: hidden;
-}
-
-img {
-max-width: 100%;
-height: auto;
-}
-
-a {
-text-decoration: none;
-color: inherit;
-}
 
 .container-site {
 width: min(var(--max), calc(100% - 32px));

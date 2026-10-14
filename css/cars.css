@@ -52,8 +52,8 @@ body {
 }
 #nav-ul .nav-item a:hover {
   color: var(--TEN) !important;
-  transition: 2s;
-  transform: translateY(-4px);
+  transition: 1s;
+  
 }
 #mainnav #nav #nav-ul .nav-item .active {
   color: var(--TEN) !important;
@@ -90,6 +90,15 @@ body {
   font-weight: 700;
   font-family: "Sora", sans-serif;
   border-bottom: 2px solid var(--primary) !important;
+}
+#logoutBtn{
+    color: var(--five);
+    font-size: 18px;
+    background:none;
+}
+#logoutBtn:hover{
+    color: var(--TEN);
+    
 }
 .video{
     height: 400px;
