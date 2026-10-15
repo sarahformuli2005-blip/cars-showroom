@@ -261,6 +261,9 @@ if (prevBtnvan) {
 window.addEventListener("resize", moveSlider);
 displayproductds(vanproducts);
 moveSlider();
+
+
+
 function addTocart(productId) {
     if(!requireLogin()){
         return

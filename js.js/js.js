@@ -1,14 +1,14 @@
 
 
 const btncar = document.getElementById("btncar");
-btncar.addEventListener("click", function(){
+btncar.addEventListener("click", function () {
     window.location.href = "cars.html"
 });
 const btnaboutus = document.getElementById("btnaboutus");
-btnaboutus.addEventListener("click", function (){
+btnaboutus.addEventListener("click", function () {
     window.location.href = "aboutus.html"
 });
-const products = [
+const productscar=[
     {
         id: 1,
         name: "Lamborghini Revuelto 2026",
@@ -162,130 +162,149 @@ const cartcount = document.getElementById("cartCount");
 const nextBtn = document.getElementById("nextBtn");
 const prevBtn = document.getElementById("prevBtn");
 
-
-let cart =[];
+let cart = [];
 let index = 0;
 
-function displayproductds(productList) {
+function displayproductdscar(productListcar){
     if (!cartslid) return;
 
-    cartslid.innerHTML="";
+    cartslid.innerHTML = "";
 
-    productList.forEach(function (product) {
+    productListcar.forEach(function (products) {
         const slide = document.createElement("div");
         slide.className = "featured-slide";
 
         slide.innerHTML = `
             <div class="card-section-two">
                 <div class="featured-image-wrap">
-                    <span class="discount">${product.discount}% OFF</span>
-                    <button type="button" class="favorite-btn" aria-label="Add to favorites">
-        <i class="bi bi-heart"></i>
-    </button>
+                    <span class="discount">${products.discount}% OFF</span>
+                    <button type="button" class="favorite-btn" aria-label="Add to favorites"> <i class="bi bi-heart"></i> </button>
                     <img
                         class="product-img"
-                        src="${product.image}"
-                        alt="${product.name}"
+                        src="${products.image}"
+                        alt="${products.name}"
                         loading="lazy"
                     >
                 </div>
 
                 <div class="product-info">
-                    <div class="product-category">${product.category}</div>
-                    <h3 class="product-name">${product.name}</h3>
-                    <p class="product-description">${product.description}</p>
+                    <div class="product-category">${products.category}</div>
+                    <h3 class="product-name">${products.name}</h3>
+                    <p class="product-description">${products.description}</p>
 
                     <div class="price">
-                        $${Number(product.price).toLocaleString()}
+                        $${Number(products.price).toLocaleString()}
                         <span class="old-price">
-                            $${Number(product.oldprice).toLocaleString()}
+                            $${Number(products.oldprice).toLocaleString()}
                         </span>
                     </div>
 
                     <button
                         type="button"
                         class="add-cart"
-                        onclick="addTocart(${product.id})"
+                        onclick="addTocart(${products.id})"
                     >
                         Add to Cart
                     </button>
                 </div>
             </div>
         `;
+
+        const image = slide.querySelector(".product-img");
+        image.addEventListener("error", function () {
+            this.alt = "Image not found: " + products.name;
+        });
+
         cartslid.appendChild(slide);
     });
-    index = 0;
-    moveSlider();
 }
+ index = 0;
+    moveSliderscar();
 function visibleCount() {
-    if (window.innerWidth <= 480) {
+   if (window.innerWidth <= 480) {
         return 1;
-    } else if (window.innerWidth <= 991){
+    } else if (window.innerWidth <= 991) {
         return 2;
     } else {
         return 4;
     }
 }
-function moveSlider() {
-    if (!cartslid) return;
 
-    const slides = cartslid.querySelectorAll(".featured-slide");
 
-    const maxIndex = Math.max(
-        0,
-        slides.length - visibleCount()
-    );
+function moveSliderscar() {
+    let slides = document.getElementsByClassName("featured-slide");
+    let visible = visibleCount();
+    let maxIndex = slides.length - visible;
 
-    index = Math.min(index, maxIndex);
+    if (maxIndex < 0) {
+        maxIndex = 0;
+    }
+
+    if (index > maxIndex) {
+        index = maxIndex;
+    }
 
     if (slides.length > 0) {
-        const cardWidth = slides[0].getBoundingClientRect().width;
-        const gap = 20;
+        let cardWidth = slides[0].offsetWidth;
+        let gap = 20;
 
         cartslid.style.transform =
-            `translateX(-${index * (cardWidth + gap)}px)`;
+            "translateX(-" + index * (cardWidth + gap) + "px)";
     }
 }
+nextBtn.addEventListener("click", function () {
+    let slides = document.getElementsByClassName("featured-slide");
+    let maxIndex = slides.length - visibleCount();
 
-if (nextBtn) {
-    nextBtn.addEventListener("click", function () {
-        const slides = cartslid.querySelectorAll(".featured-slide");
-        const maxIndex = Math.max(0, slides.length - visibleCount());
+    if (maxIndex < 0) {
+        maxIndex = 0;
+    }
 
-        index = index < maxIndex ? index + 1 : 0;
+    if (index < maxIndex) {
+        index++;
+    } else {
+        index = 0;
+    }
 
-        moveSlider();
-    });
-}
+    moveSliderscar();
+});
 
-if (prevBtn) {
-    prevBtn.addEventListener("click", function () {
-        const slides = cartslid.querySelectorAll(".featured-slide");
-        const maxIndex = Math.max(0, slides.length - visibleCount());
+prevBtn.addEventListener("click", function () {
+    let slides = document.getElementsByClassName("featured-slide");
+    let maxIndex = slides.length - visibleCount();
 
-        index = index > 0 ? index - 1 : maxIndex;
+    if (maxIndex < 0) {
+        maxIndex = 0;
+    }
 
-        moveSlider();
-    });
-}
-window.addEventListener("resize", moveSlider);
-displayproductds(products);
-moveSlider();
+    if (index > 0) {
+        index--;
+    } else {
+        index = maxIndex;
+    }
+    moveSliderscar();
+});
+window.addEventListener("resize", function () {
+    moveSliderscar();
+});
 
-
-function addTocart(productId) {
-     
+displayproductdscar(productscar);
+moveSliderscar();
+function addTocart(productsId) {
+     if(!requireLogin()){
+        return
+    }
     let selectedProduct = null;
-    for (let i = 0; i < products.length; i++) {
-        if (products[i].id === productId) {
-            selectedProduct = products[i];
+    for (let i = 0; i < productscar.length; i++) {
+        if (productscar[i].id === productsId) {
+            selectedProduct = productscar[i];
             break;
         }
     }
     if (selectedProduct === null) return;
     let foundIndex = -1;
     for (let i = 0; i < cart.length; i++) {
-        if (cart[i].id === productId) {
+        if (cart[i].id === productsId) {
             foundIndex = i;
             break;
         }
@@ -309,9 +328,9 @@ function addTocart(productId) {
 
 
 }
-function changeQuantity(productId, action) {
+function changeQuantity(productsId, action) {
     for (let i = 0; i < cart.length; i++) {
-        if (cart[i].id === productId) {
+        if (cart[i].id === productsId) {
             if (action === 'plus') {
                 cart[i].quantity = cart[i].quantity + 1;
             } else if (action === 'minus') {
@@ -327,8 +346,8 @@ function changeQuantity(productId, action) {
     
 }
 
-function removeItem(productId) {
-    cart = cart.filter(item => item.id !== productId);
+function removeItem(productsId) {
+    cart = cart.filter(item => item.id !== productsId);
     localStorage.setItem("myCart", JSON.stringify(cart));
     updateCartDisplay();
 }
@@ -393,3 +412,4 @@ window.onload = function () {
         updateCartDisplay();
     }
 };
+displayproductdscar(productscar);
