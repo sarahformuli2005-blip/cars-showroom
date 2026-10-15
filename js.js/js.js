@@ -5,8 +5,8 @@ btncar.addEventListener("click", function () {
     window.location.href = "cars.html"
 });
 const btnaboutus = document.getElementById("btnaboutus");
-btnaboutus.addEventListener("click", function () {
-    window.location.href = "aboutus.html"
+btnaboutus.addEventListener("click", function() {
+    window.location.href = "van.html"
 });
 const products = [
     {
