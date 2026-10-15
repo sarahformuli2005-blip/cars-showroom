@@ -1096,6 +1096,7 @@ const products = [
     }
 
 ];
+
 const page = 8;
 let currentpage = 1;
 const productscontainer = document.getElementById("productsContainer");
@@ -1111,8 +1112,8 @@ const destinationpagination = document.getElementById("destination-pagination");
 let selectedcategory = "All";
 let cart = [];
 let filtereddestination = [...products];
-function displayproductds(productList) {
-    productscontainer.innerHTML = "";
+function displayproductds(productList){
+    productscontainer.innerHTML="";
     if (productList.length === 0) {
         productscontainer.appendChild(noResult);
         noResult.style.display = "block";
@@ -1128,9 +1129,15 @@ function displayproductds(productList) {
         <div class="card-section-two">
          <div class="featured-image-wrap">
         <span class="discount">${product.discount}%OFF</span>
-        <button type="button" class="favorite-btn" aria-label="Add to favorites">
-        <i class="bi bi-heart"></i>
-    </button>
+        
+   <button
+    type="button"
+    class="favorite-btn"
+    data-id="${product.id}"
+    onclick="toggleFavorite(${product.id})">
+    ♡
+</button>
+
         <img class="product-img" src="${product.image}" alt="${product.name}"/>
         </div>
         <div class="product-info">
@@ -1149,6 +1156,7 @@ function displayproductds(productList) {
         `;
         productscontainer.appendChild(productCart);
     });
+   
     resultcount.textContent = `${filtereddestination.length} Products`;
 }
 categorybutton.forEach(function (button) {
@@ -1167,6 +1175,7 @@ categorybutton.forEach(function (button) {
         selectedcategory = category;
         currentpage = 1;
         rendercard();
+       
     });
 });
 /*function searchProducts(){
@@ -1185,6 +1194,8 @@ searchInput.addEventListener("input",function(event){
 })*/
 //add to cart
 function addTocart(productId) {
+    if(!requireLogin()){
+        return}
     let selectedProduct = null;
     for (let i = 0; i < products.length; i++) {
         if (products[i].id === productId) {
@@ -1409,3 +1420,9 @@ function secolltodestination() {
 }
 
 rendercard();
+
+
+
+
+
+

@@ -340,9 +340,11 @@ function requireLogin() {
     showCancelButton: true,
     confirmButtonText: "Login",
     cancelButtonText: "Cancel",
+    confirmButtonColor: "#FF5500",
+    iconColor: "#FF5500",
   }).then((result) => {
     if (result.isConfirmed) {
-      window.location.href = "loginForm.html";
+      window.location.href = "login.html";
     }
   });
   return false;

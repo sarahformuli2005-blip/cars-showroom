@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>project</title>
     
-    <link rel="stylesheet" href="./css/cart.css">
+    <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/cars.css">
 
     <link rel="stylesheet" href="./css/varibles.css">
@@ -47,8 +47,8 @@
                     <li class="nav-item"> <a href="#" class="nav-link nav-a ">CONTACT US</a> </li>
 
                     <li class="nav-item"> <a href="#" class="nav-link nav-a ">Login & Register</a> </li>
-                    <li class="nav-item "><a class="nav-link nav-a nav-icons" href="wishlist.html"><i
-                                class="bi bi-heart" style="font-size: 18px;"></i><span class="icon-nav">0</span></a>
+                    <li class="nav-item "><a class="nav-link nav-a nav-icons" href="./wishlist.html"><i
+                                class="bi bi-heart" style="font-size: 18px;"></i><span class="icon-nav" id="wishlistCount">0</span></a>
                     </li>
                     <li class="nav-item "><a class="nav-link nav-a nav-icons" href="./cart.html"id="cartButton"><i
                                 i class="bi bi-cart3"
@@ -73,14 +73,14 @@
                 <li class="nav-item"> <a href="#" class="nav-link nav-a ">CONTACT US</a> </li>
 
                 <li class="nav-item"> <a href="#" class="nav-link nav-a ">Login & Register</a> </li>
-                <li class="nav-item"><a href="#" class="nav-link">WISHLIST (<span
-                            class="wish-count">0</span>)</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">WISHLIST (<span class="icon-nav" id="wishlistCount">0</span)</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">CART (<span class="cart-count">0</span>)</a>
                 </li>
             </ul>
         </div>
     </div>
-     <section class="page-hero"><div class="container-site"><p class="eyebrow">Reservation</p><h1>Your Cart</h1><p class="section-copy" style="margin:12px 0 0">Add, change quantity, or remove. This list stays in localStorage.</p></div></section>
+     <section class="page-hero">
+        <div class="container-site"><p class="eyebrow">Reservation</p><h1>Your Cart</h1><p class="section-copy" style="margin:12px 0 0">Add, change quantity, or remove. This list stays in localStorage.</p></div></section>
     <section class="section">
         <div class="container-site">
             <div class="section-head">
@@ -90,8 +90,60 @@
             <div class="inventory-grid" id="wishGrid"></div>
         </div>
     </section>
+<footer class="footer">
+
+        <div class="container-fluid">
+            <div class="row gap-5 d-flex flex-row flex-wrap justify-content-between">
+
+                <div class="col-lg-3 col-12 col-md-6 ">
+                    <a href="index.html" class="navbar-brand  text-white fw-bold">
+                        <img src="./img/file_000000007bfc820a9ad79154b8bc36fe.png" width="30px"> AUTO<span
+                            style="color: var(--TEN);">SURE</span>
+                    </a>
+                    <p class="mt-3">
+                        Luxury cars, vans, inspection, and after-sale care in Kabul.
+                    </p>
+                </div>
+
+                <div class="col-lg-2 col-12 col-md-6 col-sm-12">
+                    <h5>Showroom</h5>
+                    <ul>
+                        <li><a href="cars.html">Our cars</a></li>
+                        <li><a href="sale.html">Cars of Sale</a></li>
+                        <li><a href="compare.html">About Us</a></li>
+                        <li><a href="customize.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-12 col-md-6 col-sm-12">
+                    <h5>Help</h5>
+                    <ul>
+                        <li><a href="wishlist.html">Wishlist</a></li>
+                        <li><a href="cart.html">Cart</a></li>
+                        <li><a href="test-drive.html">Test drive</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-12 col-md-6 col-sm-12">
+                    <h5>Visit</h5>
+                    <p>Kabul Auto District, Showroom 12</p>
+                    <p>+93 70 000 0000</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <span>© <span id="year"></span> AutoSure</span>
+            <span>A choice beyond ordinary.</span>
+        </div>
+
+    </footer>
+
 </body>
 <script src="./js.js/car.js"></script>
+<script src="./js.js/login.js"></script>
 
 </html>
 

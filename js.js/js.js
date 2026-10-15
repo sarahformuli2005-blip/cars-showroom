@@ -1,11 +1,11 @@
 
 
 const btncar = document.getElementById("btncar");
-btncar.addEventListener("click", function () {
+btncar.addEventListener("click", function(){
     window.location.href = "cars.html"
 });
 const btnaboutus = document.getElementById("btnaboutus");
-btnaboutus.addEventListener("click", function () {
+btnaboutus.addEventListener("click", function (){
     window.location.href = "aboutus.html"
 });
 const products = [
@@ -159,14 +159,17 @@ const products = [
 const cartslid = document.getElementById("cartslid");
 const cartbutton = document.getElementById("cartButton");
 const cartcount = document.getElementById("cartCount");
+const nextBtn = document.getElementById("nextBtn");
+const prevBtn = document.getElementById("prevBtn");
 
-let cart = [];
+
+let cart =[];
 let index = 0;
 
 function displayproductds(productList) {
     if (!cartslid) return;
 
-    cartslid.innerHTML = "";
+    cartslid.innerHTML="";
 
     productList.forEach(function (product) {
         const slide = document.createElement("div");
@@ -176,7 +179,9 @@ function displayproductds(productList) {
             <div class="card-section-two">
                 <div class="featured-image-wrap">
                     <span class="discount">${product.discount}% OFF</span>
-                    <button type="button" class="favorite-btn" aria-label="Add to favorites"> <i class="bi bi-heart"></i> </button>
+                    <button type="button" class="favorite-btn" aria-label="Add to favorites">
+        <i class="bi bi-heart"></i>
+    </button>
                     <img
                         class="product-img"
                         src="${product.image}"
@@ -207,87 +212,69 @@ function displayproductds(productList) {
                 </div>
             </div>
         `;
-
-        const image = slide.querySelector(".product-img");
-        image.addEventListener("error", function () {
-            this.alt = "Image not found: " + product.name;
-        });
-
         cartslid.appendChild(slide);
     });
+    index = 0;
+    moveSlider();
 }
 function visibleCount() {
     if (window.innerWidth <= 480) {
         return 1;
-    } else if (window.innerWidth <= 991) {
+    } else if (window.innerWidth <= 991){
         return 2;
     } else {
         return 4;
     }
 }
-const nextBtn = document.getElementById("nextBtn");
-const prevBtn = document.getElementById("prevBtn");
-
 function moveSlider() {
-    let slides = document.getElementsByClassName("featured-slide");
-    let visible = visibleCount();
-    let maxIndex = slides.length - visible;
+    if (!cartslid) return;
 
-    if (maxIndex < 0) {
-        maxIndex = 0;
-    }
+    const slides = cartslid.querySelectorAll(".featured-slide");
 
-    if (index > maxIndex) {
-        index = maxIndex;
-    }
+    const maxIndex = Math.max(
+        0,
+        slides.length - visibleCount()
+    );
+
+    index = Math.min(index, maxIndex);
 
     if (slides.length > 0) {
-        let cardWidth = slides[0].offsetWidth;
-        let gap = 20;
+        const cardWidth = slides[0].getBoundingClientRect().width;
+        const gap = 20;
 
         cartslid.style.transform =
-            "translateX(-" + index * (cardWidth + gap) + "px)";
+            `translateX(-${index * (cardWidth + gap)}px)`;
     }
 }
-nextBtn.addEventListener("click", function () {
-    let slides = document.getElementsByClassName("featured-slide");
-    let maxIndex = slides.length - visibleCount();
 
-    if (maxIndex < 0) {
-        maxIndex = 0;
-    }
+if (nextBtn) {
+    nextBtn.addEventListener("click", function () {
+        const slides = cartslid.querySelectorAll(".featured-slide");
+        const maxIndex = Math.max(0, slides.length - visibleCount());
 
-    if (index < maxIndex) {
-        index++;
-    } else {
-        index = 0;
-    }
+        index = index < maxIndex ? index + 1 : 0;
 
-    moveSlider();
-});
+        moveSlider();
+    });
+}
 
-prevBtn.addEventListener("click", function () {
-    let slides = document.getElementsByClassName("featured-slide");
-    let maxIndex = slides.length - visibleCount();
+if (prevBtn) {
+    prevBtn.addEventListener("click", function () {
+        const slides = cartslid.querySelectorAll(".featured-slide");
+        const maxIndex = Math.max(0, slides.length - visibleCount());
 
-    if (maxIndex < 0) {
-        maxIndex = 0;
-    }
+        index = index > 0 ? index - 1 : maxIndex;
 
-    if (index > 0) {
-        index--;
-    } else {
-        index = maxIndex;
-    }
-    moveSlider();
-});
-window.addEventListener("resize", function () {
-    moveSlider();
-});
-
+        moveSlider();
+    });
+}
+window.addEventListener("resize", moveSlider);
 displayproductds(products);
 moveSlider();
+
+
 function addTocart(productId) {
+     
     let selectedProduct = null;
     for (let i = 0; i < products.length; i++) {
         if (products[i].id === productId) {
@@ -337,8 +324,7 @@ function changeQuantity(productId, action) {
     }
     localStorage.setItem("myCart", JSON.stringify(cart));
     updateCartDisplay();
-    localStorage.setItem('myCart', JSON.stringify(cart));
-    updateCartDisplay();
+    
 }
 
 function removeItem(productId) {
@@ -407,4 +393,3 @@ window.onload = function () {
         updateCartDisplay();
     }
 };
-displayproductds(products);

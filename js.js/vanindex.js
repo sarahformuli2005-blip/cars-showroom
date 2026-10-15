@@ -262,6 +262,9 @@ window.addEventListener("resize", moveSlider);
 displayproductds(vanproducts);
 moveSlider();
 function addTocart(productId) {
+    if(!requireLogin()){
+        return
+    }
     let selectedProduct = null;
     for (let i = 0; i < vanproducts.length; i++) {
         if (vanproducts[i].id === productId) {

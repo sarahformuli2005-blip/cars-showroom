@@ -1,0 +1,21 @@
+```css
+/* قلب وقتی انتخاب شود سرخ می‌شود */
+.favorite-btn.active {
+    color: red;
+}
+
+/* اگر قلب از آیکن ساخته شده باشد */
+.favorite-btn.active i {
+    color: red;
+}
+
+/* دکمه حذف موتر */
+.remove-car {
+    background-color: red;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+```

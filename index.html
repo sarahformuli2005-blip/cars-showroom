@@ -44,8 +44,8 @@
                     <li class="nav-item"> <a href="./countact.html" class="nav-link nav-a ">CONTACT US</a> </li>
 
                     <li class="nav-item"> <a href="./login.html" class="nav-link nav-a ">Login & Register</a> </li>
-                    <li class="nav-item "><a class="nav-link nav-a nav-icons" href="wishlist.html"><i
-                                class="bi bi-heart" style="font-size: 18px;"></i><span class="icon-nav">0</span></a>
+                    <li class="nav-item "><a class="nav-link nav-a nav-icons" href="#"><i
+                                class="bi bi-heart" style="font-size: 18px;"></i><span class="icon-nav" id="wishlistCount">0</span></a>
                     </li>
                     <li class="nav-item ">
                         <a class="nav-link nav-a nav-icons" href="./cart.html"id="cartButton"><i
@@ -74,7 +74,7 @@
                 <li class="nav-item"> <a href="./countact.html" class="nav-link nav-a ">CONTACT US</a> </li>
 
                 <li class="nav-item"> <a href="./login.html" class="nav-link nav-a ">Login & Register</a> </li>
-                <li class="nav-item"><a href="#" class="nav-link">WISHLIST (<span class="wish-count">0</span>)</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">WISHLIST (<span class="icon-nav" id="wishlistCount">0</span>)</a></li>
                 <li class="nav-item"><a href="./cart.html" class="nav-link">CART (<span class="cart-count">0</span>)</a>
                 </li>
                 <li class="nav-item ">
@@ -587,31 +587,31 @@
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12 col-12 div-left" style="margin-top: 6%;">
-                    <form class="buy-box" style="position:static">
-                        <div class="field"><label>Full name</label><input required type="text"></div>
-                        <div class="field"><label>Phone</label><input required type="number"></div>
+                    <form class="buy-box" style="position:static" id="reserveform">
+                        <div class="field"><label>Full name</label><input required type="text"id="reservename"></div>
+                        <div class="field"><label>Phone</label><input required type="tel" id="reservephone"></div>
                         <div class="field"><label>Car</label><select id="reserveCar">
-                                <option>Toyota Land Cruiser 2026</option>
-                                <option>Toyota Camry 2026</option>
-                                <option>Toyota GR Supra 2026</option>
-                                <option>Lamborghini Revueilto 2026</option>
-                                <option>Lamborghini Huracan EVO</option>
-                                <option>Ferrari 296 GTB 2026</option>
-                                <option>Ferrari F430 Scuderia</option>
-                                <option>Bentley Continental GT2026</option>
-                                <option> Bentley Continental GTC</option>
-                                <option>Aston Martin Vantage 2026</option>
-                                <option>Aston Martin DB12</option>
-                                <option>Lexus LC 500 2026</option>
-                                <option>Lexus RX 500h</option>
-                                <option>Cadillac Escalade-V 2026</option>
-                                <option>Cadillac CT5-V</option>
-                                <option>BMW M4 Competition</option>
-                                <option>BMW X5 M</option>
+                                <option value="Toyota Land Cruiser 2026">Toyota Land Cruiser 2026</option>
+                                <option value="Toyota Camry 2026">Toyota Camry 2026</option>
+                                <option value="Toyota GR Supra 2026">Toyota GR Supra 2026</option>
+                                <option value="Lamborghini Revueilto 2026">Lamborghini Revueilto 2026</option>
+                                <option value="Lamborghini Huracan EVO">Lamborghini Huracan EVO</option>
+                                <option value="Ferrari 296 GTB 2026">Ferrari 296 GTB 2026</option>
+                                <option value="Ferrari F430 Scuderia">Ferrari F430 Scuderia</option>
+                                <option value="Bentley Continental GT2026">Bentley Continental GT2026</option>
+                                <option value="Bentley Continental GTC"> Bentley Continental GTC</option>
+                                <option value="Aston Martin Vantage 2026">Aston Martin Vantage 2026</option>
+                                <option value="Aston Martin DB12">Aston Martin DB12</option>
+                                <option value="Lexus LC 500 2026">Lexus LC 500 2026</option>
+                                <option value="Lexus RX 500h">Lexus RX 500h</option>
+                                <option value="Cadillac Escalade-V 2026">Cadillac Escalade-V 2026</option>
+                                <option value="Cadillac CT5-V">Cadillac CT5-V</option>
+                                <option value="BMW M4 Competition">BMW M4 Competition</option>
+                                <option value="BMW X5 M">BMW X5 M</option>
                             </select></div>
-                        <div class="field"><label>Preferred date</label><input type="date" required></div>
+                       
                         <div class="field"><label>Note</label><textarea rows="3"
-                                placeholder="Color, trade-in, finance…"></textarea></div>
+                                placeholder="Color, trade-in, finance…" id="reservenote"></textarea></div>
                         <button class="btn-main w-100 justify-content-center" type="submit">Reserve this car</button>
                     </form>
                 </div>
@@ -678,8 +678,10 @@
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="./js.js/js.js"></script>
-<script src="./js.js/cart.js"></script>
 <script src="./js.js/vanindex.js"></script>
 <script src="./js.js/login.js"></script>
+<script src="./js.js/reserve.js"></script>
+
 </html>

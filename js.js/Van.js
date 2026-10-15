@@ -921,6 +921,9 @@ searchInput.addEventListener("input",function(event){
 })*/
 //add to cart
 function addTocart(productId) {
+     if(!requireLogin()){
+        return
+    }
     let selectedProduct = null;
     for (let i = 0; i < products.length; i++) {
         if (products[i].id === productId) {
