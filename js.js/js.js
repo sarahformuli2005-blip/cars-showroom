@@ -8,7 +8,7 @@ const btnaboutus = document.getElementById("btnaboutus");
 btnaboutus.addEventListener("click", function () {
     window.location.href = "aboutus.html"
 });
-const productscar=[
+const products = [
     {
         id: 1,
         name: "Lamborghini Revuelto 2026",
@@ -159,50 +159,48 @@ const productscar=[
 const cartslid = document.getElementById("cartslid");
 const cartbutton = document.getElementById("cartButton");
 const cartcount = document.getElementById("cartCount");
-const nextBtn = document.getElementById("nextBtn");
-const prevBtn = document.getElementById("prevBtn");
 
 let cart = [];
 let index = 0;
 
-function displayproductdscar(productListcar){
+function displayproductds(productList) {
     if (!cartslid) return;
 
     cartslid.innerHTML = "";
 
-    productListcar.forEach(function (products) {
+    productList.forEach(function (product) {
         const slide = document.createElement("div");
         slide.className = "featured-slide";
 
         slide.innerHTML = `
             <div class="card-section-two">
                 <div class="featured-image-wrap">
-                    <span class="discount">${products.discount}% OFF</span>
+                    <span class="discount">${product.discount}% OFF</span>
                     <button type="button" class="favorite-btn" aria-label="Add to favorites"> <i class="bi bi-heart"></i> </button>
                     <img
                         class="product-img"
-                        src="${products.image}"
-                        alt="${products.name}"
+                        src="${product.image}"
+                        alt="${product.name}"
                         loading="lazy"
                     >
                 </div>
 
                 <div class="product-info">
-                    <div class="product-category">${products.category}</div>
-                    <h3 class="product-name">${products.name}</h3>
-                    <p class="product-description">${products.description}</p>
+                    <div class="product-category">${product.category}</div>
+                    <h3 class="product-name">${product.name}</h3>
+                    <p class="product-description">${product.description}</p>
 
                     <div class="price">
-                        $${Number(products.price).toLocaleString()}
+                        $${Number(product.price).toLocaleString()}
                         <span class="old-price">
-                            $${Number(products.oldprice).toLocaleString()}
+                            $${Number(product.oldprice).toLocaleString()}
                         </span>
                     </div>
 
                     <button
                         type="button"
                         class="add-cart"
-                        onclick="addTocart(${products.id})"
+                        onclick="addTocart(${product.id})"
                     >
                         Add to Cart
                     </button>
@@ -212,16 +210,14 @@ function displayproductdscar(productListcar){
 
         const image = slide.querySelector(".product-img");
         image.addEventListener("error", function () {
-            this.alt = "Image not found: " + products.name;
+            this.alt = "Image not found: " + product.name;
         });
 
         cartslid.appendChild(slide);
     });
 }
- index = 0;
-    moveSliderscar();
 function visibleCount() {
-   if (window.innerWidth <= 480) {
+    if (window.innerWidth <= 480) {
         return 1;
     } else if (window.innerWidth <= 991) {
         return 2;
@@ -229,9 +225,10 @@ function visibleCount() {
         return 4;
     }
 }
+const nextBtn = document.getElementById("nextBtn");
+const prevBtn = document.getElementById("prevBtn");
 
-
-function moveSliderscar() {
+function moveSlidercar() {
     let slides = document.getElementsByClassName("featured-slide");
     let visible = visibleCount();
     let maxIndex = slides.length - visible;
@@ -266,7 +263,7 @@ nextBtn.addEventListener("click", function () {
         index = 0;
     }
 
-    moveSliderscar();
+    moveSlidercar();
 });
 
 prevBtn.addEventListener("click", function () {
@@ -282,29 +279,29 @@ prevBtn.addEventListener("click", function () {
     } else {
         index = maxIndex;
     }
-    moveSliderscar();
+    moveSlidercar();
 });
 window.addEventListener("resize", function () {
-    moveSliderscar();
+    moveSlidercar();
 });
 
-displayproductdscar(productscar);
-moveSliderscar();
-function addTocart(productsId) {
+displayproductds(products);
+moveSlidercar();
+function addTocart(productId) {
      if(!requireLogin()){
         return
     }
     let selectedProduct = null;
-    for (let i = 0; i < productscar.length; i++) {
-        if (productscar[i].id === productsId) {
-            selectedProduct = productscar[i];
+    for (let i = 0; i < products.length; i++) {
+        if (products[i].id === productId) {
+            selectedProduct = products[i];
             break;
         }
     }
     if (selectedProduct === null) return;
     let foundIndex = -1;
     for (let i = 0; i < cart.length; i++) {
-        if (cart[i].id === productsId) {
+        if (cart[i].id === productId) {
             foundIndex = i;
             break;
         }
@@ -328,9 +325,9 @@ function addTocart(productsId) {
 
 
 }
-function changeQuantity(productsId, action) {
+function changeQuantity(productId, action) {
     for (let i = 0; i < cart.length; i++) {
-        if (cart[i].id === productsId) {
+        if (cart[i].id === productId) {
             if (action === 'plus') {
                 cart[i].quantity = cart[i].quantity + 1;
             } else if (action === 'minus') {
@@ -343,11 +340,12 @@ function changeQuantity(productsId, action) {
     }
     localStorage.setItem("myCart", JSON.stringify(cart));
     updateCartDisplay();
-    
+    localStorage.setItem('myCart', JSON.stringify(cart));
+    updateCartDisplay();
 }
 
-function removeItem(productsId) {
-    cart = cart.filter(item => item.id !== productsId);
+function removeItem(productId) {
+    cart = cart.filter(item => item.id !== productId);
     localStorage.setItem("myCart", JSON.stringify(cart));
     updateCartDisplay();
 }
@@ -412,4 +410,4 @@ window.onload = function () {
         updateCartDisplay();
     }
 };
-displayproductdscar(productscar);
+displayproductds(products);
